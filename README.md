@@ -190,9 +190,15 @@ Your app is ready to be deployed!
     <td align="center"><a href="https://github.com/sanjitkverma"><img src="https://avatars.githubusercontent.com/sanjitkverma" width="100px;" alt=""/><br /><b>Sanjit Verma</b></a></td>
     <td align="center"><a href="https://github.com/arul28"><img src="https://avatars.githubusercontent.com/arul28" width="100px;" alt=""/><br /><b>Arul Sharma</b></a><br /></td>
     <td align="center"><a href="https://github.com/Harris-A-Khan"><img src="https://avatars.githubusercontent.com/Harris-A-Khan" width="100px;" alt=""/><br /><b>Harris Khan </b></a><br /></td>
-    <td align="center"><a href="https://github.com/Sarvesh-Somasundaram"><img src="https://avatars.githubusercontent.com/Sarvesh-Somasundaram" width="100px;" alt=""/><br /><b>Sarvesh Somasundaram</b></a><br /></td>
+    <td align="center"><a href="https://github.com/Sarvesh-Somasundaram"><img src="https://avatars.githubusercontent.com/Sarvesh-Somasundaram" width="100px;" alt=""/><br /><b>Sarvesh Somasundaram</b></a><br /></td>   
+  </tr>
+</table>
 
-
-   
+## Iteration 3:
+ <table>
+  <tr>
+    <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""/><br /><b>Nick Case/b></a></td>
+    <td align="center"><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes/b></a><br /></td>
+    <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""/><br /><b>Satwika Kancharla </b></a><br /></td>
   </tr>
 </table>
