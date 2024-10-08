@@ -197,8 +197,8 @@ Your app is ready to be deployed!
 ## Iteration 3:
  <table>
   <tr>
-    <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""/><br /><b>Nick Case/b></a></td>
-    <td align="center"><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes/b></a><br /></td>
+    <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""/><br /><b>Nick Case</b></a></td>
+    <td align="center"><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes</b></a><br /></td>
     <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""/><br /><b>Satwika Kancharla </b></a><br /></td>
   </tr>
 </table>
