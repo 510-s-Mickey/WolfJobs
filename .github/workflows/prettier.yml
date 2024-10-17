@@ -1,4 +1,4 @@
-name: Prettier Formatting Check
+name: prettier-check
 
 on:
   push:
@@ -19,9 +19,4 @@ jobs:
           node-version: '20'
           
       - name: Run Prettier
-        run: npx prettier --check .
-
-      # Optional: Automatically fix formatting issues on failure
-      - name: Auto-fix Prettier issues
-        if: failure()
-        run: npx prettier --write .
+        run: npx prettier --check --write .
