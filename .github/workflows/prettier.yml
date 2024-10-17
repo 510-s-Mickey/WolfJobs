@@ -18,8 +18,19 @@ jobs:
         with:
           node-version: '20'
           
-      - name: Run Prettier on frontend
-        run: npx prettier --check --write /frontend
+          # Prettier check on frontend, fixes if failure
+          # Will be red fail if errors
+      - name: Run Prettier check in frontend folder
+        run: npx prettier --check frontend/**
+      - name: Auto-fix Prettier issues in frontend folder
+        if: failure()
+        run: npx prettier --write frontend/**
 
-      - name: Run Prettier on backend
-        run: npx prettier --check --write /backend
+          # Prettier check on frontend, fixes if failure
+          # Will be red fail if errors
+      - name: Run Prettier check in backend folder
+        run: npx prettier --check backend/**
+      - name: Auto-fix Prettier issues in backend folder
+        if: failure()
+        run: npx prettier --write backend/**
+
