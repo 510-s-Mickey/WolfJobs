@@ -18,5 +18,8 @@ jobs:
         with:
           node-version: '20'
           
-      - name: Run Prettier
-        run: npx prettier --check --write .
+      - name: Run Prettier on frontend
+        run: npx prettier --check --write /frontend
+
+      - name: Run Prettier on backend
+        run: npx prettier --check --write /backend
