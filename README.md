@@ -1,4 +1,4 @@
-![Banner](https://github.com/SE-Fall-2024/WolfJobs/blob/GIF-Update/GIFs/Banner.png)
+![Banner](https://github.com/SE-Fall-2024/WolfJobs/blob/master/GIFs/Banner.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm-build](https://github.com/SE-Fall-2024/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/SE-Fall-2024/WolfJobs/actions/workflows/build-checker.yml)
