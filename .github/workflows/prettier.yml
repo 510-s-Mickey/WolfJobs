@@ -1,12 +1,10 @@
 name: Prettier Formatting Check
 
 on:
-  pull_request:
-    branches:
-      - master
   push:
-    branches:
-      - master
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
 
 jobs:
   prettier:
@@ -18,11 +16,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Adjust based on your project's requirements
-
-      - name: Install dependencies
-        run: npm install
-
+          node-version: '20'
+          
       - name: Run Prettier
         run: npx prettier --check .
 
