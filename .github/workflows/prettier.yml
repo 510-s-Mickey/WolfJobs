@@ -1,0 +1,32 @@
+name: Prettier Formatting Check
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Adjust based on your project's requirements
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Prettier
+        run: npx prettier --check .
+
+      # Optional: Automatically fix formatting issues on failure
+      - name: Auto-fix Prettier issues
+        if: failure()
+        run: npx prettier --write .
