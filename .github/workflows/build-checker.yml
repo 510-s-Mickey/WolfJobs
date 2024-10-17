@@ -45,4 +45,4 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          path: /frontend/coverage
+          files: /frontend/coverage
