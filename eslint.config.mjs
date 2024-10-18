@@ -1,7 +1,6 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
 
 export default [
   {
@@ -13,7 +12,13 @@ export default [
         ...globals.chai,
         ...globals.mocha,
       },
-      sourceType: "module", // or "commonjs" as needed
+      sourceType: "module", // Use "module" for ES module support
+    },
+  },
+  {
+    files: ["**/*.{ts,tsx}"], // Apply TypeScript specific rules
+    rules: {
+      "@typescript-eslint/no-require-imports": "off", // Disable no-require-imports for TypeScript files
     },
   },
   {
@@ -22,5 +27,4 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  // Add any additional plugins or settings here
 ];

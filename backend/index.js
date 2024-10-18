@@ -6,8 +6,6 @@ const port = 8000;
 
 const expressLayouts = require("express-ejs-layouts");
 
-const db = require("./config/mongoose");
-
 //Used for session cookie
 
 const session = require("express-session");

@@ -1,6 +1,5 @@
 const User = require("../../../models/user");
 const jwt = require("jsonwebtoken");
-const Food = require("../../../models/food");
 const History = require("../../../models/history");
 const Job = require("../../../models/job");
 const Application = require("../../../models/application");
