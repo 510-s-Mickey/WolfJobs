@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: daily-build-check
 
 on:
@@ -9,7 +6,7 @@ on:
   pull_request:
     branches: ["master"]
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 3 * * *" # Daily at 3 AM
 
 jobs:
   build:
@@ -17,37 +14,41 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [20.x]  # Add more Node.js versions as needed
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - uses: actions/checkout@v3  # Checkout the code from the repo
+
+      - name: Use Node.js ${{ matrix.node-version }}  # Set up Node.js version
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
-          
-      - name: Install packages
-        working-directory: ./frontend
-        run: |
-          npm i
+          cache: "npm"  # Cache npm dependencies
 
-      - name: Run frontend
+      - name: Install frontend packages  # Install frontend dependencies
         working-directory: ./frontend
-        run: |
-          npm run build --if-present
+        run: npm install
 
-      - name: Run frontend
+      - name: Build frontend  # Build the frontend application
+        working-directory: ./frontend
+        run: npm run build --if-present
+
+      - name: Install backend packages  # Install backend dependencies
         working-directory: ./backend
-        run: |
-          npm start
+        run: npm install
 
-      - name: Run tests & coverage
+      - name: Run backend  # Start the backend server
+        working-directory: ./backend
+        run: npm start &
+        
+      - name: Wait for backend to start  # Wait for the backend to initialize (adjust if necessary)
+        run: sleep 10  # You can adjust the wait time based on your backend initialization
+
+      - name: Run frontend tests & coverage  # Run tests and coverage for the frontend
         working-directory: ./frontend
-        run: |
-          npm run coverage
+        run: npm run coverage
 
-      - name: Upload coverage to Codecov
+      - name: Upload coverage to Codecov  # Upload coverage results to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
