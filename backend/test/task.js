@@ -1,6 +1,6 @@
-let chai = require("chai");
-let chaiHttp = require("chai-http");
-let server = require("../index");
+import chai from "chai"
+import chaiHttp from "chai-http"
+//let server = require("../index");
 
 chai.should();
 
@@ -88,15 +88,7 @@ describe("Tasks API", () => {
       chai
         .request("http://localhost:8000")
         .post("/api/v1/users/createjob")
-        .send({
-          name: "Shaan",
-          managerid: "1234556",
-          skills: "C,java",
-          location: "Noida",
-          description: "xyz",
-          pay: "10",
-          schedule: "10/10/10",
-        })
+        .send(body)
         .end((err, response) => {
           response.body.should.be.a("object");
 
@@ -122,7 +114,7 @@ describe("Tasks API", () => {
       chai
         .request("http://localhost:8000")
         .get("/api/v1/users/search/TA")
-        // .send(body)
+        .send(body)
         .end((err, response) => {
           response.body.should.be.a("object");
 

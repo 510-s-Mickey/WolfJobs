@@ -1,14 +1,14 @@
-const express = require("express");
+import express from "express";                          // Importing express
+import homeController from "../controllers/home_controller"; // Importing home controller
+import usersRouter from "./users";                       // Importing users router
+import apiRouter from "./api";                           // Importing API router
 
-const router = express.Router();
+const router = express.Router();                        // Creating a new router instance
 
-const homeController = require("../controllers/home_controller");
+console.log("router loaded");                          // Log message indicating the router is loaded
 
-console.log("router loaded");
+router.get("/", homeController.home);                  // Define the home route
+router.use("/users", usersRouter);                     // Use the users router
+router.use("/api", apiRouter);                         // Use the API router
 
-router.get("/", homeController.home);
-router.use("/users", require("./users"));
-
-router.use("/api", require("./api"));
-
-module.exports = router;
+export default router;                                  // Export the router

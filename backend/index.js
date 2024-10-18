@@ -1,22 +1,14 @@
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
+import express from "express"
+import cookieParser from "cookie-parser";
+import cors from "cors"
 const app = express();
 const port = 8000;
-
-const expressLayouts = require("express-ejs-layouts");
-
-const db = require("./config/mongoose");
+import expressLayouts from "express-ejs-layouts";
+import routes from "./routes";
 
 //Used for session cookie
-
-const session = require("express-session");
-
-const passport = require("passport");
-
-const passportLocal = require("./config/passport-local-strategy");
-
-const passportJWT = require("./config/passport-jwt-strategy");
+import session from "express-session"
+import passport from "passport"
 
 app.use(cors());
 
@@ -56,7 +48,7 @@ app.use(passport.setAuthenticatedUser);
 
 //Use express router
 
-app.use("/", require("./routes"));
+app.use("/", routes);  
 
 app.listen(port, function (err) {
   if (err) {

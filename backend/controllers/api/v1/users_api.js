@@ -1,14 +1,13 @@
-const User = require("../../../models/user");
-const jwt = require("jsonwebtoken");
-const Food = require("../../../models/food");
-const History = require("../../../models/history");
-const Job = require("../../../models/job");
-const Application = require("../../../models/application");
-const AuthOtp = require("../../../models/authOtp");
+import User from "../../../models/user";
+import jwt from "jsonwebtoken";
+import History from "../../../models/history";
+import Job from "../../../models/job";
+import Application from "../../../models/application";
+import AuthOtp from "../../../models/authOtp";
+import nodemailer from "nodemailer"
+import * as dotenv from "dotenv";
 
-const nodemailer = require("nodemailer");
-
-require("dotenv").config();
+dotenv.config();
 
 module.exports.createSession = async function (req, res) {
   try {
@@ -90,7 +89,7 @@ module.exports.signUp = async function (req, res) {
       }
 
       if (!user) {
-        let user = User.create(req.body, function (err, user) {
+        User.create(req.body, function (err) {
           if (err) {
             return res.json(500, {
               message: "Internal Server Error",
@@ -166,8 +165,7 @@ module.exports.editProfile = async function (req, res) {
     user.availability = req.body.availability;
     user.gender = req.body.gender;
     // user.dob = req.body.dob;
-    check = req.body.skills;
-    user.skills = check;
+    user.skills = req.body.skills;
     user.save();
     res.set("Access-Control-Allow-Origin", "*");
     return res.json(200, {
@@ -251,7 +249,7 @@ module.exports.getHistory = async function (req, res) {
 
 module.exports.createJob = async function (req, res) {
   let user = await User.findOne({ _id: req.body.id });
-  check = req.body.skills;
+  //check = req.body.skills;
   try {
     let job = await Job.create({
       name: req.body.name,
@@ -500,7 +498,7 @@ function getTransport() {
 module.exports.generateOtp = async function (req, res) {
   const otp = Math.floor(100000 + Math.random() * 900000);
   try {
-    let authOtp = await AuthOtp.create({
+    await AuthOtp.create({
       userId: req.body.userId,
       otp: otp,
     });
