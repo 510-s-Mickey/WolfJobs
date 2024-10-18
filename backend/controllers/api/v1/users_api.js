@@ -564,5 +564,3 @@ module.exports.verifyOtp = async function (req, res) {
     });
   }
 };
-
-
