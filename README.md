@@ -1,29 +1,12 @@
 ![Banner](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Banner.png)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm-build](https://github.com/deepr41/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/deepr41/WolfJobs/actions/workflows/build-checker.yml)
-[![npm-build](https://github.com/deepr41/WolfJobs/actions/workflows/build-test-upload.yml/badge.svg)](https://github.com/deepr41/WolfJobs/actions/workflows/build-test-upload.yml)
-[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![Issues](https://img.shields.io/github/issues/deepr41/wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-[![Issues Closed](https://img.shields.io/github/issues-closed/deepr41/wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-![last commit](https://img.shields.io/github/last-commit/deepr41/Wolfjobs)
-![Lines of code](https://tokei.rs/b1/github/deepr41/wolfjobs)
-[![Repo-size](https://img.shields.io/github/repo-size/deepr41/Wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-[![file_count](https://img.shields.io/github/directory-file-count/deepr41/Wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-[![language_count](https://img.shields.io/github/languages/count/deepr41/Wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-[![Downloads](https://img.shields.io/github/downloads/deepr41/WolfJobs/total)](https://GitHub.com/deepr41/Wolfjobs/)
-[![Top Language](https://img.shields.io/github/languages/top/deepr41/wolfjobs)](https://GitHub.com/deepr41/Wolfjobs/)
-[![DOI](https://zenodo.org/badge/429097663.svg)](https://zenodo.org/badge/latestdoi/429097663)
-[![Release](https://img.shields.io/github/v/release/deepr41/wolfjobs)](https://gitHub.com/deepr41/Wolfjobs)
-[![codecov](https://codecov.io/gh/deepr41/WolfJobs/graph/badge.svg?token=RH472ZM4PT)](https://codecov.io/gh/deepr41/WolfJobs)
-
-<!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
+<!-- Add Badges!! add build checker (like HW actions reference), add coverage, version, issues open, doi, release -->
 
 # Tech Stack:
-
-<!-- - ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) -->
-
+<!-- Really Good Reference: https://github.com/Ileriayo/markdown-badges -->
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
@@ -31,23 +14,11 @@
 
 # What's New:
 
- - **New Screens Added!**
- - Branding, Colours and Typography
- - Components & States
- - Mutliple UI Screens _flows_ for Student & Manager Roles
- - [https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs)
-
- - Seamless Resume Upload and Parsing: We've made it a breeze for applicants to submit their resumes for each job posting, while employers can effortlessly access and view the stored PDFs in MongoDB.
- - Precision Application Matching: Say goodbye to the uncertainty of job applications! With our enhanced system, applicants now have the power to identify which jobs align perfectly with their skills and qualifications. WolfJobs will analyze your profile and inform you if you're a strong fit for a position.
- - Revamped Job Sorting and Search:  Our revamped job sorting and search features allows you to easily organize opportunities by pay, city, and employment type. Plus, you can perform specific job searches to find the perfect match.
-- Stay Informed with the Notifications Tab: Introduced our brand-new Notifications tab to WolfJobs. Now, you can receive timely updates on the status of your applications, ensuring you're always in the know about your job prospects. 
 
 
 # Presentation Video
 
-[![Watch the video](https://github.com/deepr41/WolfJobs/blob/master/GIFs/Video%20Thumbnail.png)](http://www.youtube.com/watch?v=kMgLUrDiYEw)
-
-# About Us
+# About WolfJobs
 
 Eager to dive into a side hustle or seize a full-time job opportunity? Look no further than WolfJobs. Our platform is the ultimate connector between recruiters in need of talent for both short-term and full-time roles and candidates seeking the freedom to choose. Dive in, earn your share, and opt out whenever you want – or stay on for a longer journey!
 
@@ -103,6 +74,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 
 # Installation Instructions for Project Setup
+<!-- Need to update this!! Especially if we dockerize -->
 
 **Prerequisites:**
 
