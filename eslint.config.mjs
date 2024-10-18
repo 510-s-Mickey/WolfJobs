@@ -13,7 +13,7 @@ export default [
         ...globals.chai,
         ...globals.mocha,
       },
-      sourceType: "commonjs", // or "commonjs" as needed
+      sourceType: "module", // or "commonjs" as needed
     },
   },
   {

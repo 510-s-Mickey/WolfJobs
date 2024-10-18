@@ -1,7 +1,8 @@
 // controllers/resume_controller.js
-import Resume from "../models/resume";
-import User from "../models/user";        
-import multer from "multer"; 
+const Resume = require("../models/resume");
+const User = require("../models/user");
+
+const multer = require("multer");
 
 const upload = multer({
   limits: { fileSize: 15 * 1024 * 1024 }, // 15MB limit

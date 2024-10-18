@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+const mongoose = require("mongoose");
 
 // Auth OTP table
 const autoOtpSchema = new mongoose.Schema(

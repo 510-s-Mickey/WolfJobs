@@ -1,7 +1,8 @@
-import passport from "passport";
-import User from "../models/user";
-import { Strategy as LocalStrategy } from 'passport-local';
+const passport = require("passport");
 
+const LocalStrategy = require("passport-local").Strategy;
+
+const User = require("../models/user");
 
 //Authentication using passport
 

@@ -1,8 +1,7 @@
-import express from "express";         // Importing express
-import usersRouter from "./users";      // Importing users router
+const express = require("express");
 
-const router = express.Router();       // Creating a new router instance
+const router = express.Router();
 
-router.use("/users", usersRouter);    // Using the users router
+router.use("/users", require("./users"));
 
-export default router;                 // Exporting the router
+module.exports = router;

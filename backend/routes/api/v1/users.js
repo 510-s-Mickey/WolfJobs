@@ -1,9 +1,10 @@
-import express from "express";                                // Importing express
-import usersApi from "../../../controllers/api/v1/users_api"; // Importing users API controller
-import bodyParser from "body-parser";                          // Importing body-parser
+const express = require("express");
 
-const router = express.Router();                               // Creating a new router instance
+const router = express.Router();
 
+const usersApi = require("../../../controllers/api/v1/users_api");
+
+const bodyParser = require("body-parser");
 
 const jsonParser = bodyParser.json();
 

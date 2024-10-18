@@ -1,10 +1,13 @@
-import express from "express";                     // Importing express
-import passport from "passport";                    // Importing passport
-import usersController from "../controllers/users_controller"; // Importing users controller
-import resumeController from "../controllers/resume_controller"; // Importing resume controller
+const express = require("express");
 
-const router = express.Router();                   // Creating a new router instance
+const router = express.Router();
 
+const passport = require("passport");
+
+const usersController = require("../controllers/users_controller");
+
+// import the resume controller
+const resumeController = require("../controllers/resume_controller");
 
 router.get("/profile", passport.checkAuthentication, usersController.profile);
 

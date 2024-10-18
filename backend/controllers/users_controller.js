@@ -1,4 +1,4 @@
-import User from "../models/user";
+const User = require("../models/user");
 
 module.exports.profile = function (req, res) {
   return res.render("user_profile", {
@@ -38,7 +38,7 @@ module.exports.create = function (req, res) {
     }
 
     if (!user) {
-      User.create(req.body, function (err) {
+      User.create(req.body, function (err, user) {
         if (err) {
           console.log("Error in creating a user while signing up");
           return;
