@@ -1,22 +1,49 @@
 let chai = require("chai");
 let chaiHttp = require("chai-http");
-let server = require("../index");
 
 chai.should();
 
 chai.use(chaiHttp);
 const jwt = require('jsonwebtoken');
 
-describe("Backend API", () => {
-  describe("POST /api/v1/users/createsession", () => {
-    it("hits the create session endpoint which should empty since nothing was passed in", async () => {
+chai.use(chaiHttp);
+const expect = chai.expect;
+
+describe("Backend API testing", () => {
+  let authToken;
+
+  //before(async () => {
+  //   try {
+  //     // Create a test user or use an existing one
+  //     const testUser = {
+  //       email: "testuser@example.com",
+  //       password: "testpassword"
+  //     };
+
+  //     // Login to get the auth token
+  //     const response = await chai
+  //       .request("http://localhost:8000")
+  //       .post("/api/v1/users/createsession")
+  //       .send(testUser);
+
+  //     expect(response).to.have.status(200);
+  //     expect(response.body.data).to.have.property('token');
+  //     authToken = response.body.data.token;
+  //   } catch (error) {
+  //     console.error("Error in before hook:", error);
+  //     throw error;
+  //   }
+  // });
+
+  describe("GET /api/v1/users/createsession", () => {
+    it("hits the create session endpoint which should be empty since nothing was passed in", async () => {
       try {
         const response = await chai
           .request("http://localhost:8000")
           .post("/api/v1/users/createsession");
-
+  
         response.body.should.be.a("object");
-        response.body.should.be.empty;
+        response.body.should.be.empty
         console.log(response.body);
       } catch (error) {
         throw error;
@@ -24,6 +51,7 @@ describe("Backend API", () => {
     });
   });
 });
+
 
   describe("GET /api/v1/users/", () => {
     it("IT SHOULD RETURN ALL THE JOBS", (done) => {
@@ -124,8 +152,26 @@ describe("Backend API", () => {
 
           console.log("*********", response.body.users);
 
-          done();
-        });
-    });
-  });
+  //         done();
+  //       });
+  //   });
+  // });
+
+  // describe("POST /api/v1/users/create-session", () => {
+  //   it("IT SHOULD RETURN THE USER", (done) => {
+  //     const body = { email: "boss@gmail.com", password: "123" };
+  //     chai
+  //       .request("http://localhost:8000")
+  //       .post("/api/v1/users/create-session")
+  //       .send(body)
+
+  //       .end((err, response) => {
+  //         response.body.should.be.a("object");
+
+  //         console.log("*********", response.body);
+
+  //         done();
+  //       });
+  //   });
+  // });
 });
