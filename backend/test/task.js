@@ -6,13 +6,13 @@ chai.should();
 
 chai.use(chaiHttp);
 
-describe("Tasks API", () => {
-  describe("GET /api/v1/users/createsession", () => {
+describe("Backend API", () => {
+  describe("POST /api/v1/users/createsession", () => {
     it("hits the create session endpoint which should empty since nothing was passed in", async () => {
       try {
         const response = await chai
           .request("http://localhost:8000")
-          .get("/api/v1/users/createsession");
+          .post("/api/v1/users/createsession");
     
         response.body.should.be.a("object");
         response.body.should.be.empty
