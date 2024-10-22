@@ -181,12 +181,12 @@ const RegistrationPage = () => {
               </FormControl>
               {role === "Manager" && (
                 <FormControl>
-                  <InputLabel id="affiliation-id">Role</InputLabel>
+                  <InputLabel id="role-id">Affiliation</InputLabel>
                   <Select
                     value={affilation}
-                    labelId="affiliation-id"
-                    label="Role"
-                    id="role"
+                    labelId="role-id"
+                    label="affiliation"
+                    id="affiliation"
                     onChange={(e: SelectChangeEvent) => {
                       setAffiliation(e.target.value);
                     }}

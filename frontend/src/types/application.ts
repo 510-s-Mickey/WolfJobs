@@ -8,7 +8,7 @@ type Application = {
   applicantSkills: string;
   phonenumber: string;
   manageremail: string;
-  managerAffilication: string;
+  managerAffiliation: string;
   managername: string;
   address: string;
   hours: string;

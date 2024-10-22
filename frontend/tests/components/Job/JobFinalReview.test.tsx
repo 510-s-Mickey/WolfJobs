@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import JobFinalReview from "../../../src/components/Job/JobFinalReview";
 import { MemoryRouter } from "react-router";
 
@@ -9,5 +9,10 @@ describe("obFinalReview", () => {
         <JobFinalReview jobData={{ _id: 1 }} />
       </MemoryRouter>
     );
+    expect(screen.getByText("Review"));
+    expect(screen.getByText("Accepted Candidates"));
+    expect(screen.getByText("Rejected Candidates"));
+    let listEmpty = screen.getAllByText(/list empty/i);
+    expect(listEmpty.length == 2);
   });
 });

@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import JobScreening from "../../../src/components/Job/JobScreening";
 import { MemoryRouter } from "react-router";
 
@@ -13,5 +13,6 @@ describe("JobScreening", () => {
         />
       </MemoryRouter>
     );
+    expect(screen.getByText("Screening"));
   });
 });

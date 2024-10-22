@@ -59,7 +59,7 @@ const JobListTile = (props: any) => {
     console.log("Found Application:", temp);
   }, [data, applicationList, userId]);
 
-  const affilation = data.managerAffilication;
+  const affilation = data.managerAffiliation;
   const role = data.name;
   const jobType = data?.type?.split("-")?.join(" ");
   const pay = data.pay || "0";

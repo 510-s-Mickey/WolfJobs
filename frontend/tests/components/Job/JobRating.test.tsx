@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import JobRating from "../../../src/components/Job/JobRating";
 import { MemoryRouter } from "react-router";
 
@@ -13,5 +13,6 @@ describe("JobRating", () => {
         />
       </MemoryRouter>
     );
+    expect(screen.getByText("Rating"));
   });
 });

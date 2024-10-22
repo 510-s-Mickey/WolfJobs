@@ -9,7 +9,7 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  managerAffilication: {
+  managerAffiliation: {
     type: String,
     required: true,
   },
