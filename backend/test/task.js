@@ -1,28 +1,26 @@
 let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../index");
+const { connectTestDB, closeTestDB, clearTestDB } = require("./testDbSetup");
 
 chai.should();
 
 chai.use(chaiHttp);
 
-describe("Tasks API", () => {
+describe("Backend API", () => {
+  before(async () => await connectTestDB());
+  after(async () => await closeTestDB());
+  afterEach(async () => await clearTestDB());
+
   describe("GET /api/v1/users/fetchapplications", () => {
     it("IT SHOULD RETURN ALL THE APPLICATIONS", (done) => {
-      // const task = {
-      //     email:'shaangzb@gmail.com',
-      //     password:'123',
-
-      // };
-
       chai
         .request("http://localhost:8000")
         .get("/api/v1/users/fetchapplications")
 
         .end((err, response) => {
           response.body.should.be.a("object");
-
-          console.log("*********", response.body);
+          response.body.should.be.empty;
 
           done();
         });
