@@ -5,30 +5,32 @@ import ResumeViewer from "../../../src/components/Resume/ResumeViewer";
 import { MemoryRouter } from "react-router";
 
 describe("Resume", () => {
-  it ("Renders Resume", () => {
+  it("Renders Resume", () => {
     render(
       <MemoryRouter>
-        <Resume/>
+        <Resume />
       </MemoryRouter>
-    )
+    );
 
-    expect(screen.queryByText("Drag 'n' drop somefiles here, or click to select files"));
-    expect(screen.getByRole('button', {name: /Upload Resume/i}));    
-    expect(screen.getByRole('presentation'));  
-
+    expect(
+      screen.queryByText(
+        "Drag 'n' drop somefiles here, or click to select files"
+      )
+    );
+    expect(screen.getByRole("button", { name: /Upload Resume/i }));
+    expect(screen.getByRole("presentation"));
   });
 
-  it ("Renders Resume Viewer", () => {
+  it("Renders Resume Viewer", () => {
     render(
       <MemoryRouter>
-        <ResumeViewer/>
+        <ResumeViewer />
       </MemoryRouter>
-    )
+    );
 
     expect(screen.queryByText("Page 1 of"));
     expect(screen.queryByText("Failed to load PDF file."));
-    expect(screen.getByRole('button', {name: /Previous/i}));   
-    expect(screen.getByRole('button', {name: /Next/i}));  
+    expect(screen.getByRole("button", { name: /Previous/i }));
+    expect(screen.getByRole("button", { name: /Next/i }));
   });
-
 });

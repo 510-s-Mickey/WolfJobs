@@ -1,7 +1,7 @@
 import Explore from "../../../src/Pages/Explore/Explore";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
@@ -40,7 +40,6 @@ describe("Explore", () => {
   //   expect(screen.queryByText("Sort by City : On"));
   //   expect(screen.queryByText("Sort by Employment Type : On"));
   //   expect(screen.queryByText("Show Open Jobs"));
-
 
   // });
   beforeEach(() => {
