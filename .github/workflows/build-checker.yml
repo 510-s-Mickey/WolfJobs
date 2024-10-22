@@ -49,7 +49,7 @@ jobs:
 
       - name: Run backend tests & coverage
         working-directory: ./backend
-        run: NODE_ENV=test nyc mocha --recursive --exit
+        run: npm test
 
       - name: Upload coverage to Codecov 
         uses: codecov/codecov-action@v3
