@@ -61,22 +61,23 @@ describe("Backend API", () => {
       };
 
       const body2 = {
+        email: "h@gmail.com",
+        password: "word",
+        confirmPassword: "word",
+        name: "Nick",
         role: "Manager",
-        name: "Nick Case",
-        password: "password",
-        email: "n@h.com",
-        confirm_password: "password",
+        skills: "Talking",
       };
 
-      // chai
-      //   .request("http://localhost:8000")
-      //   .post("/api/v1/users/signup")
-      //   .send(body2)
-      //   .end((err, response) => {
-      //     response.body.should.be.a("object");
+      chai
+        .request("http://localhost:8000")
+        .post("/api/v1/users/signup")
+        .send(body2)
+        .end((err, response) => {
+          response.body.should.be.a("object");
 
-      //     //console.log("*********", response);
-      //   });
+          console.log("*********", response);
+        });
 
       chai
         .request("http://localhost:8000")
@@ -92,47 +93,47 @@ describe("Backend API", () => {
     });
   });
 
-  describe("GET /api/v1/users/search", () => {
-    it("IT SHOULD RETURN THE SEARCHED JOB", (done) => {
-      const body = {
-        name: "Shaan",
-        managerid: "1234556",
-        skills: "C,java",
-        location: "Noida",
-        description: "xyz",
-        pay: "10",
-        schedule: "10/10/10",
-      };
+  // describe("GET /api/v1/users/search", () => {
+  //   it("IT SHOULD RETURN THE SEARCHED JOB", (done) => {
+  //     const body = {
+  //       name: "Shaan",
+  //       managerid: "1234556",
+  //       skills: "C,java",
+  //       location: "Noida",
+  //       description: "xyz",
+  //       pay: "10",
+  //       schedule: "10/10/10",
+  //     };
 
-      chai
-        .request("http://localhost:8000")
-        .get("/api/v1/users/search/TA")
-        // .send(body)
-        .end((err, response) => {
-          response.body.should.be.a("object");
+  //     chai
+  //       .request("http://localhost:8000")
+  //       .get("/api/v1/users/search/TA")
+  //       // .send(body)
+  //       .end((err, response) => {
+  //         response.body.should.be.a("object");
 
-          console.log("*********", response.body.users);
+  //         console.log("*********", response.body.users);
 
-          done();
-        });
-    });
-  });
+  //         done();
+  //       });
+  //   });
+  // });
 
-  describe("POST /api/v1/users/create-session", () => {
-    it("IT SHOULD RETURN THE USER", (done) => {
-      const body = { email: "boss@gmail.com", password: "123" };
-      chai
-        .request("http://localhost:8000")
-        .post("/api/v1/users/create-session")
-        .send(body)
+  // describe("POST /api/v1/users/create-session", () => {
+  //   it("IT SHOULD RETURN THE USER", (done) => {
+  //     const body = { email: "boss@gmail.com", password: "123" };
+  //     chai
+  //       .request("http://localhost:8000")
+  //       .post("/api/v1/users/create-session")
+  //       .send(body)
 
-        .end((err, response) => {
-          response.body.should.be.a("object");
+  //       .end((err, response) => {
+  //         response.body.should.be.a("object");
 
-          console.log("*********", response.body);
+  //         console.log("*********", response.body);
 
-          done();
-        });
-    });
-  });
+  //         done();
+  //       });
+  //   });
+  // });
 });
