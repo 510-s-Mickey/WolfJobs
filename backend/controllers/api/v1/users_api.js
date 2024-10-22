@@ -255,7 +255,7 @@ module.exports.createJob = async function (req, res) {
     let job = await Job.create({
       name: req.body.name,
       managerid: user._id,
-      managerAffilication: user.affiliation,
+      managerAffiliation: user.affiliation,
       type: req.body.type,
       location: req.body.location,
       description: req.body.description,
