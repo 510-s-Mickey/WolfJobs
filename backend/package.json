@@ -1,11 +1,11 @@
 {
   "name": "wolfjobs",
   "version": "1.0.0",
-  "description": "Webapp Calorie Count",
+  "description": "Applying to on-campus jobs job portal",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "mocha --recursive --exit"
+    "test": "NODE_ENV=test mocha --recursive --exit"
   },
   "keywords": [
     "Calorie",
