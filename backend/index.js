@@ -8,6 +8,8 @@ const expressLayouts = require("express-ejs-layouts");
 
 const db = require("./config/mongoose");
 
+db.connectDB();
+
 //Used for session cookie
 
 const session = require("express-session");

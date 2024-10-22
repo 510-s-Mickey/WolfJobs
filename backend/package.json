@@ -1,11 +1,11 @@
 {
   "name": "wolfjobs",
   "version": "1.0.0",
-  "description": "Webapp Calorie Count",
+  "description": "Applying to on-campus jobs job portal",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "mocha --recursive --exit"
+    "test": "NODE_ENV=test nyc mocha --recursive --exit"
   },
   "keywords": [
     "Calorie",
@@ -30,6 +30,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.14",
+    "nyc": "^17.1.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
@@ -43,6 +44,7 @@
     "eslint": "^8.1.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.26.1",
-    "mocha": "^9.1.2"
+    "mocha": "^9.1.2",
+    "mongodb-memory-server": "^10.1.2"
   }
 }
