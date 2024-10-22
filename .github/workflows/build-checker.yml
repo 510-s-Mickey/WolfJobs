@@ -37,18 +37,22 @@ jobs:
         working-directory: ./backend
         run: npm install
 
-      - name: Run backend  # Start the backend server
+      - name: Run backend 
         working-directory: ./backend
         run: npm start &
         
-      - name: Wait for backend to start  # Wait for the backend to initialize (adjust if necessary)
-        run: sleep 10  # You can adjust the wait time based on your backend initialization
+      - name: Wait for backend to start  # Wait for the backend to initialize
+        run: sleep 10
 
-      - name: Run frontend tests & coverage  # Run tests and coverage for the frontend
+      - name: Run frontend tests & coverage 
         working-directory: ./frontend
         run: npm run coverage
 
-      - name: Upload coverage to Codecov  # Upload coverage results to Codecov
+      - name: Run backend tests & coverage
+        working-directory: ./backend
+        run: NODE_ENV=test nyc mocha --recursive --exit
+
+      - name: Upload coverage to Codecov 
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
