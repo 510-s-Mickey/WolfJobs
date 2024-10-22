@@ -14,11 +14,10 @@ const ResumeDropzone: React.FC<ResumeDropzoneProps> = ({ onFileUpload }) => {
       // Handle any file rejections
       fileRejections.forEach((file) => {
         console.error(`File rejected: ${file.file.name}`);
-        // Here you can handle displaying an error message to the user
       });
     },
     [onFileUpload]
-  ); // Don't forget to include onFileUpload in the dependencies array
+  );
 
   const dropzoneOptions: DropzoneOptions = {
     onDrop,

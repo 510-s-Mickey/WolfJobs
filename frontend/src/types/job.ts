@@ -2,7 +2,7 @@ type Job = {
   _id: string;
   name: string;
   managerid: string;
-  managerAffilication: string;
+  managerAffiliation: string;
   status: string;
   location: string;
   description: string;

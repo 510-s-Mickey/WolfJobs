@@ -1,11 +1,27 @@
 import Dashboard from "../../../src/Pages/Dashboard/Dashboard";
 import { MemoryRouter } from "react-router";
+import { render, screen } from "@testing-library/react";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
 const mock = new MockAdapter(axios);
 
 describe("Dashboard", () => {
+  // it("Render Dashboard Empty", async () => {
+  //   render(
+  //     <MemoryRouter>
+  //       <Dashboard/>
+  //     </MemoryRouter>
+  //   )
+
+  //   expect(screen.queryByText("Nothing to show!"));
+  //   expect(screen.queryByText("My Listings"));
+  //   expect(screen.queryByText("Select a job for more details"));
+
+  //   expect(screen.queryByText("All jobs"));
+  //   expect(screen.queryByText("Profile"));
+  //   expect(screen.queryByText("Log Out"));
+  // });
   beforeEach(() => {
     // Clear prior mocks and configurations
     mock.reset();

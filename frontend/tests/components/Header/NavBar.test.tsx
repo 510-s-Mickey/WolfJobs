@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import NavBar from "../../../src/components/Header/NavBar";
 import { MemoryRouter } from "react-router";
 
@@ -9,5 +9,12 @@ describe("NavBar", () => {
         <NavBar />
       </MemoryRouter>
     );
+
+    expect(screen.queryByText("My Applications"));
+    expect(screen.queryByText("All Jobs"));
+    expect(screen.queryByText("Profile"));
+    expect(screen.queryByText("Upload Resume"));
+    expect(screen.queryByText("Notifications (0)"));
+    expect(screen.queryByText("Log Out"));
   });
 });

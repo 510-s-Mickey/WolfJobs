@@ -28,7 +28,8 @@ const JobPreview = () => {
   const {
     details,
     questions,
-  }: { details: FormValuesDetails; questions: FormValuesQuestions } = state;
+  }: { details: FormValuesDetails; questions: FormValuesQuestions } =
+    state || {};
 
   const navigate = useNavigate();
   const userId = useUserStore((state) => state.id);
