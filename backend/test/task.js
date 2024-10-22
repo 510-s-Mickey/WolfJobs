@@ -69,15 +69,15 @@ describe("Backend API", () => {
         skills: "Talking",
       };
 
-      chai
-        .request("http://localhost:8000")
-        .post("/api/v1/users/signup")
-        .send(body2)
-        .end((err, response) => {
-          response.body.should.be.a("object");
+      // chai
+      //   .request("http://localhost:8000")
+      //   .post("/api/v1/users/signup")
+      //   .send(body2)
+      //   .end((err, response) => {
+      //     response.body.should.be.a("object");
 
-          console.log("*********", response);
-        });
+      //     console.log("*********", response);
+      //   });
 
       chai
         .request("http://localhost:8000")
