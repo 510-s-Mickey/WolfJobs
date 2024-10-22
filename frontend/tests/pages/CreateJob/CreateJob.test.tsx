@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event';
 import CreateJob from "../../../src/Pages/CreateJob/CreateJob";
 import { MemoryRouter } from "react-router";
 

@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import JobManagerView from "../../../src/components/Job/JobManagerView";
 import { MemoryRouter } from "react-router";
 
@@ -15,5 +15,7 @@ describe("JobManagerView", () => {
         />
       </MemoryRouter>
     );
+    expect(screen.getByText("Screening"));
+    expect(screen.getByText("List empty"));
   });
 });
