@@ -105,7 +105,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 **Step 3: Run WolfJobs**
 - Open a terminal window and navigate to the home directory (WolfJobs)
-- Enter the docker command: `docker compose --profile all up --build`
+- Enter the docker command: `docker compose up --build`
   - The first build can take a while, so be patient!
 
 **Step 4: Open [http://localhost:5173](http://localhost:5173) to view it in the browser.**
