@@ -105,7 +105,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 **Step 3: Run WolfJobs**
 - Open a terminal window and navigate to the home directory (WolfJobs)
-- Enter the docker command: `docker compose up --build`
+- Enter the docker command: `docker compose --profile all up --build`
   - The first build can take a while, so be patient!
 
 **Step 4: Open [http://localhost:5173](http://localhost:5173) to view it in the browser.**
@@ -117,20 +117,20 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 #### `docker compose down`
 - Removes Docker containers
 
-In the frontend project directory, you can run:
+### Frontend Directory 
+Accessible by `cd frontend` from the parent directory: WolfJobs.
 
 #### `npm test`
+- Runs frontend tests
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+####   `npm run coverage`
+- Runs coverage report for frontend tests
 
-#### `npm run build`
+### Backend Directory
+Accessible by `cd backend` from the parent directory: Wolfjobs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### `npm test`
+- Runs backend tests
 
 # Future Improvements✨
 
