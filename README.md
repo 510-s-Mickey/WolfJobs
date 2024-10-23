@@ -98,33 +98,26 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 - Download and install the latest version of MongoDB from [MongoDB Official Website.](https://www.mongodb.com/try/download/community)
 - Make sure you have React version 18.0
 
-**Step 1: Clone the Repository from this [link](https://github.com/deepr41/WolfJobs.git)**
+**Step 1: Clone the Repository from this [link](https://github.com/SE-Fall-2024/WolfJobs)**
 
-**Step 2: Backend Setup**
+**Step 2: Prerequisites**
+- Make sure [Docker]([url](https://www.docker.com/)) is downloaded.
 
-- Open a terminal window and navigate to the backend directory by executing the command: _cd backend_
-
-- Install the necessary packages by running: _npm install_
-
-- Start the backend service with the following command: _npm start_
-
-**Step 3: Frontend Setup**
-
-- Open a new terminal window and navigate to the frontend directory: _cd frontend_
-
-- Install the required packages: _npm install_
-
-- Start the development server: _npm run dev_
+**Step 3: Run WolfJobs**
+- Open a terminal window and navigate to the home directory (WolfJobs)
+- Enter the docker command: `docker compose up --build`
+  - The first build can take a while, so be patient!
 
 **Step 4: Open [http://localhost:5173](http://localhost:5173) to view it in the browser.**
 
 **Congratulations! The project should now be up and running successfully.**
 
-# Additional commands for React App
+# Additional commands for WolfJobs
 
-## Available Scripts
+#### `docker compose down`
+- Removes Docker containers
 
-In the project directory, you can run:
+In the frontend project directory, you can run:
 
 #### `npm test`
 
