@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { MongoMemoryServer } = require("mongodb-memory-server");
+mongoose.set("strictQuery", true);
 
 let mongod;
 
