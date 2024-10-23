@@ -18,7 +18,8 @@ Backend Coverage![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?prefi
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
-<!-- https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
+<!-- the tool used to generate the backend coverage badge, just run npm run coverage:badge from home directory with $statements$ where you want the badge to be generated in the README.
+https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 # Tech Stack:
 
