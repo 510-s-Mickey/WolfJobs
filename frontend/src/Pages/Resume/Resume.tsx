@@ -3,6 +3,7 @@ import axios from "axios";
 import ResumeDropzone from "../../components/Resume/ResumeDropzone";
 import { useUserStore } from "../../store/UserStore";
 import { toast } from "react-toastify";
+import { Button } from "@mui/material";
 
 const Resume: React.FC = () => {
   // State to store the uploaded file
@@ -51,14 +52,20 @@ const Resume: React.FC = () => {
           <ResumeDropzone
             onFileUpload={(acceptedFiles) => setFile(acceptedFiles[0])}
           />
-          <div className="flex flex-row">
-            <button
-              onClick={handleSubmit}
-              className="px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded"
-            >
-              Upload Resume
-            </button>
-          </div>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                disabled={!file}
+                style={{
+                  background: "#FF5353",
+                  borderRadius: "10px",
+                  textTransform: "none",
+                  fontSize: "16px",
+                }}
+              >
+                Upload Resume
+              </Button>
 
           {resumeName && (
             <div className="mt-4">
