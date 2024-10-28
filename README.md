@@ -58,9 +58,15 @@
 
 # What's New
 
-- GitHub Actions are documented and described in the Wiki [here](https://github.com/SE-Fall-2024/WolfJobs/wiki/Github-Actions-Documentation).
+- Implemented new GitHub Actions are documented and described in the Wiki [here](https://github.com/SE-Fall-2024/WolfJobs/wiki/Github-Actions-Documentation).
 - Containerization of Entire Application! This provides a seamless process to build the application.
 - Minor changes to UI to match [style guide](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs).
+- Implemented Prettier formating and EsLinting for style consistancy and static analysis
+- Used In-Memory MongoDB databases to create a new MongoDB database in memory when testing the backend every time
+- Fixed backend tests to no longer timeout and implemented a test suite of backend tests using ^
+- Documented the application architecture in a software architecture diagram
+
+
 
 # Presentation Video
 
