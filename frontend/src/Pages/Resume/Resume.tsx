@@ -52,20 +52,20 @@ const Resume: React.FC = () => {
           <ResumeDropzone
             onFileUpload={(acceptedFiles) => setFile(acceptedFiles[0])}
           />
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-                disabled={!file}
-                style={{
-                  background: "#FF5353",
-                  borderRadius: "10px",
-                  textTransform: "none",
-                  fontSize: "16px",
-                }}
-              >
-                Upload Resume
-              </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleSubmit}
+            disabled={!file}
+            style={{
+              background: "#FF5353",
+              borderRadius: "10px",
+              textTransform: "none",
+              fontSize: "16px",
+            }}
+          >
+            Upload Resume
+          </Button>
 
           {resumeName && (
             <div className="mt-4">

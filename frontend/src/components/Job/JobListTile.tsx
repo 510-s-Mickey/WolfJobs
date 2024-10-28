@@ -78,9 +78,8 @@ const JobListTile = (props: any) => {
     try {
       return tag.split("-").join(" ");
     } catch (error) {
-      return '';
+      return "";
     }
-
   };
 
   const getAffiliationColour = (tag: string) => {
