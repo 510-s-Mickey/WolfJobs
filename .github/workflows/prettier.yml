@@ -19,10 +19,10 @@ jobs:
           node-version: '20'
           
       - name: Run Prettier check in frontend folder
-        run: npx prettier --check backend/**/*.{js,tsx}
+        run: npx prettier --check "backend/**/*.{js,tsx}"
 
           # Prettier check on frontend, fixes if failure
           # Will be red fail if errors
       - name: Run Prettier check in backend folder
-        run: npx prettier --check backend/**/*.{js,tsx}
+        run: npx prettier --check "backend/**/*.{js,tsx}"
 
