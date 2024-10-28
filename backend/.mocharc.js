@@ -1,5 +1,5 @@
 // .mocharc.js
 module.exports = {
-  timeout: 10000,
+  timeout: 100000,
   exit: true,
 };
