@@ -216,11 +216,10 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 </table>
 
 ## Iteration 3:
- <table>
+<table>
   <tr>
-    <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""/><br /><b>Nick Case</b></a></td>
-    <td align="center"><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes</b></a><br /></td>
-    <td align="center"><a href="https://github.com/hannahe6"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes (used two accounts)</b></a><br /></td>
-    <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""/><br /><b>Satwika Kancharla </b></a><br /></td>
+    <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""><br><b>Nick Case</b></a></td>
+    <td align="center"><br><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""><br><b>Hannah Estes</b></a><br><a href="https://github.com/hannahe6"><b>(second account)</b></a></td>
+    <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""><br><b>Satwika Kancharla</b></a></td>
   </tr>
 </table>
