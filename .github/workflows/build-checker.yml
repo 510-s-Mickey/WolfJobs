@@ -31,7 +31,7 @@ jobs:
       - name: Check if containers are running
         run: |
           sleep 30  # Give containers time to start up
-          if docker ps | grep -q "frontend" && docker ps | grep -q "backend"; then
+          if docker ps | grep -q "frontend" && docker ps | grep -q "backend" && docker ps | grep -q "mongo"; then
             echo "Containers are running successfully"
           else
             echo "Containers failed to start"
