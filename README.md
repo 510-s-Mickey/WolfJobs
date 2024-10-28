@@ -1,4 +1,4 @@
-![Banner](https://github.com/SE-Fall-2024/WolfJobs/blob/39cafea0dea6636c34c4871fe952aeb7e8f5615d/GIFs/Banner.png)
+![Banner](resources/Banner.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm-build](https://github.com/SE-Fall-2024/WolfJobs/actions/workflows/build-checker.yml/badge.svg)](https://github.com/SE-Fall-2024/WolfJobs/actions/workflows/build-checker.yml)
@@ -19,19 +19,48 @@
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 
-# Tech Stack:
+# Tech Stack 
 <!-- Really Good Reference: https://github.com/Ileriayo/markdown-badges -->
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+#### Backend Technologies
+
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![RestAPI](https://img.shields.io/badge/RestAPI-005571?style=for-the-badge&logo=restapi)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-# What's New:
-- GitHub Actions are documented and described in the Wiki [here](https://github.com/SE-Fall-2024/WolfJobs/wiki/Github-Actions-Documentation)
+#### Frontend Technologies
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
+#### Styling
+
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+
+#### Testing
+
+![Mocha](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
+![Chai](https://img.shields.io/badge/-chai-%23a40802?style=for-the-badge&logo=chai&logoColor=white)
+![Vitest](https://img.shields.io/badge/-Vitest-252529?style=for-the-badge&logo=vitest&logoColor=FCC72B)
+
+#### Package Management
+
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+
+#### CI/CD
+
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+
+
+# What's New
+
+- GitHub Actions are documented and described in the Wiki [here](https://github.com/SE-Fall-2024/WolfJobs/wiki/Github-Actions-Documentation).
+- Containerization of Entire Application! This provides a seamless process to build the application.
+- Minor changes to UI to match [style guide](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs).
 
 # Presentation Video
 
@@ -59,35 +88,35 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ### Signup & Login
 
-![Signup & Login](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Student%20-%20Sign%20Up%20%26%20Login.gif)
+![Signup & Login](resources/Student%20-%20Sign%20Up%20%26%20Login.gif)
 
 ### Student Applies for Job
 
-![Apply for Job](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Student%20Applies%20to%20a%20Job.gif)
+![Apply for Job](resources/Student%20Applies%20to%20a%20Job.gif)
 
 ### Application Status & Questionaire
 
-![Questionaire](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Applicant%20Filling%20answers.gif)
+![Questionaire](resources/Applicant%20Filling%20answers.gif)
 
 ## Manager Side
 
 ### Manager Sign Up
-![Manager Sign Up](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Sign%20Up.gif)
+![Manager Sign Up](resources/Manager%20-%20Sign%20Up.gif)
 
 ### Manager Login
-![Manager Login](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Login.gif)
+![Manager Login](resources/Manager%20-%20Login.gif)
 
 ### Edit Profile
-![Edit Profile](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Open%20%26%20Edit%20Profile.gif)
+![Edit Profile](resources/Open%20%26%20Edit%20Profile.gif)
 
 ### Add/Close Job
-![Add/Close Job](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Add%20%26%20Close%20Job.gif)
+![Add/Close Job](resources/Add%20%26%20Close%20Job.gif)
 
 ### Screening
-![Screening](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Screening.gif)
+![Screening](resources/Manager%20-%20Screening.gif)
 
 ### Review & Accept Applications
-![Review Applications](https://github.com/deepr41/WolfJobs/blob/GIF-Update/GIFs/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
+![Review Applications](resources/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
 
 
 # Installation Instructions for Project Setup
@@ -133,24 +162,25 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 #### `npm test`
 - Runs backend tests
 
-# Future Improvements✨
+# Future Improvements
 
-**1. Email Service📧** - On getting selected/rejected to a job, the applicant should be getting an email about it.
+**1. Email Service** - On getting selected/rejected to a job, the applicant should be getting an email about it.
 
 **2. Interview Video Submission** - Managers can request applicants to submit a video screening file and applicants can upload a video on their side of the portal.
 
-**3. Job Analysis🔍** – WolfJobs will provide the functionality of analysing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salary to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
+**3. Job Analysis** – WolfJobs will provide the functionality of analysing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salary to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
 
-**4. Chatbot Integration🤖** – Our platform WolfJobs will also provide the functionality of Chatbot integrated with our website so that user can easily interact with the bot and get to know about various features of our web application and have a nice interactive experience.
+**4. Interview Appointment Scheduling** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
 
-**5. Interview Appointment Scheduling📆** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
+**5. Candidate Matching Percentage** – WolfJobs applicant skill matching feature will include a percentage to how fit a candidate's skills are based on the job's required skills. Applicants will see a match percentage indicating how likely they are to get accepted and recieve an interview. 
 
-**6. Candidate Matching Percentage** – WolfJobs applicant skill matching feature will include a percentage to how fit a candidate's skills are based on the job's required skills. Applicants will see a match percentage indicating how likely they are to get accepted and recieve an interview. 
+**6. Matching based on Resume** – WolfJobs applicants will be able to parse their resume and WolfJobs will extract key skills from the resume and compare it with required job skills to give candidates job matching status.
 
-**7. Matching based on Resume** – WolfJobs applicants will be able to parse their resume and WolfJobs will extract key skills from the resume and compare it with required job skills to give candidates job matching status.
+**7. Database Security and Hashing** – WolfJobs currently does not securely store the password and user information in the database. This data needs to be protected and hashed to ensure security.
 
-**8. Database Security and Hashing** – WolfJobs currently does not securely store the password and user information in the database. This data needs to be protected and hashed to ensure security.
+**8. Refactoring of Backend** - Reference the note attached to architecture diagram. There are multiple index.js files that reference eachother and should be consolidated.
 
+**9. Fix Resume Storage and View** - Wolfjobs currently does not display resumes stored in the databases.
 
 # Contributors
 
@@ -160,9 +190,6 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
     <td align="center"><a href="https://github.com/shafa112"><img src="https://avatars.githubusercontent.com/shafa112" width="100px;" alt=""/><br /><b>Shafa Hassan</b></a><br /></td>
     <td align="center"><a href="https://github.com/Janhavi-23"><img src="https://avatars.githubusercontent.com/Janhavi-23" width="100px;" alt=""/><br /><b>Janhavi Pendse</b></a><br /></td>
     <td align="center"><a href="https://github.com/deepp2905"><img src="https://avatars.githubusercontent.com/deepp2905" width="100px;" alt=""/><br /><b>Deep Patel</b></a><br /></td>
-
-
-   
   </tr>
 </table>
 
