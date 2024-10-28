@@ -1,3 +1,9 @@
 {
-    "coverage_file_path": "./backend/coverage/coverage-summary.json"
-}
+    "coverage_file_path": "./backend/coverage/coverage-summary.json",
+    "badges": {
+      "statements": {
+        "label": "Backend-Coverage"
+      }
+    }
+  }
+  
