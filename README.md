@@ -30,7 +30,7 @@
 ![RestAPI](https://img.shields.io/badge/RestAPI-005571?style=for-the-badge&logo=restapi)
 
 # What's New:
-
+- GitHub Actions are documented and described in the Wiki [here](https://github.com/SE-Fall-2024/WolfJobs/wiki/Github-Actions-Documentation)
 
 
 # Presentation Video
