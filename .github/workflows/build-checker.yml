@@ -24,21 +24,22 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install frontend packages  # Install frontend dependencies
-        working-directory: ./frontend
-        run: npm install
-
-      - name: Install backend packages  # Install backend dependencies
-        working-directory: ./backend
-        run: npm install
-
       - name: Build application with docker
         working-directory: ./
         run: docker compose up -d --build
 
-      - name: Wait for containers to be ready
+      - name: Check if containers are running
         run: |
-          sleep 30
-          docker ps
+          sleep 30  # Give containers time to start up
+          if docker ps | grep -q "frontend" && docker ps | grep -q "backend"; then
+            echo "Containers are running successfully"
+          else
+            echo "Containers failed to start"
+            docker-compose logs
+            exit 1
+          fi
+
+      - name: Display running containers
+        run: docker ps
       
       
