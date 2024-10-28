@@ -68,7 +68,7 @@
 
 
 ### Documented the application architecture in a software architecture diagram
-![Diagram](https://github.com/SE-Fall-2024/WolfJobs/blob/8fc26401efe658c2fff36937a051a6430b69c36e/GIFs/Arch%20Diagram.png)
+![Diagram](https://github.com/SE-Fall-2024/WolfJobs/blob/8fc26401efe658c2fff36937a051a6430b69c36e/resources/Arch%20Diagram.png)
 
 NOTE: Note about routes/v1/index.js step
 From the backend/index.js file, it points to the /routers folder which contains an index.js file which points to another index.js which checks a user.js file for API endpoints, and then checks the final routes/api/v1/index.js and routes/api/v1/user.js. The different index.js files point to each other while checking the same level user.js files for API endpoints until it hits the routes/v1/user.js which contains the majority of the API endpoints. It took us awhile to figure this out and we wanted to document how it worked.
@@ -219,7 +219,7 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
  <table>
   <tr>
     <td align="center"><a href="https://github.com/nrcase"><img src="https://avatars.githubusercontent.com/nrcase" width="100px;" alt=""/><br /><b>Nick Case</b></a></td>
-    <td align="center"><a href="https://github.com/hannahestes"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes</b></a><br /></td>
+    <td align="center"><a href="https://github.com/hannahestes"><a href="https://github.com/hannahe6"><img src="https://avatars.githubusercontent.com/hannahestes" width="100px;" alt=""/><br /><b>Hannah Estes</b></a></a><br /></td>
     <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""/><br /><b>Satwika Kancharla </b></a><br /></td>
   </tr>
 </table>
