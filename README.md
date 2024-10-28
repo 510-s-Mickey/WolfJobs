@@ -65,7 +65,7 @@
 - Used In-Memory MongoDB databases to create a new MongoDB database in memory when testing the backend every time
 - Fixed backend tests to no longer timeout and implemented a test suite of backend tests using ^
 - Documented the application architecture in a software architecture diagram
-
+![Diagram](https://github.com/SE-Fall-2024/WolfJobs/blob/8fc26401efe658c2fff36937a051a6430b69c36e/GIFs/Arch%20Diagram.png)
 
 
 # Presentation Video
