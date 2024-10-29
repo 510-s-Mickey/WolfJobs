@@ -12,10 +12,10 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [22.x]  # Add more Node.js versions as needed
+        node-version: [22.x]
 
     steps:
-      - uses: actions/checkout@v4  # Checkout the code from the repo
+      - uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}  # Set up Node.js version
         uses: actions/setup-node@v3
@@ -35,7 +35,7 @@ jobs:
         run: npm run coverage
 
       - name: Run backend tests & coverage
-        working-directory: ./backend/test
+        working-directory: ./backend
         run: npm run coverage
 
       - name: Upload coverage to Codecov 
