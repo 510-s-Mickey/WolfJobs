@@ -13,7 +13,7 @@
 [![Top Language](https://img.shields.io/github/languages/top/SE-Fall-2024/wolfjobs)](https://GitHub.com/SE-Fall-2024/Wolfjobs/)
 [![DOI](https://zenodo.org/badge/429097663.svg)](https://zenodo.org/badge/latestdoi/429097663) TODO
 [![Release](https://img.shields.io/github/v/release/deepr41/wolfjobs)](https://gitHub.com/SE-Fall-2024/Wolfjobs) TODO
-[![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)
+
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 <!-- the tool used to generate the backend coverage badge, just run npm run coverage:badge from home directory with ![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$) where you want the badge to be generated in the README.
@@ -21,6 +21,12 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 # Tech Stack 
 <!-- Really Good Reference: https://github.com/Ileriayo/markdown-badges -->
+
+#### Code Coverage
+Frontend
+[![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)
+Backend
+
 
 #### Backend Technologies
 
