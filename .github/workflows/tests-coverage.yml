@@ -35,7 +35,7 @@ jobs:
         run: npm run coverage
 
       - name: Run backend tests & coverage
-        working-directory: ./backend
+        working-directory: ./backend/test
         run: npm run coverage
 
       - name: Upload coverage to Codecov 
