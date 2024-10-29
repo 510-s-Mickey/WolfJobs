@@ -14,8 +14,6 @@
 [![DOI](https://zenodo.org/badge/429097663.svg)](https://zenodo.org/badge/latestdoi/429097663) TODO
 [![Release](https://img.shields.io/github/v/release/deepr41/wolfjobs)](https://gitHub.com/SE-Fall-2024/Wolfjobs) TODO
 [![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/.prettierrc.json)
-[![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 <!-- the tool used to generate the backend coverage badge, just run npm run coverage:badge from home directory with ![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$) where you want the badge to be generated in the README.
@@ -56,6 +54,10 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 #### CI/CD
 
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+
+#### Code Formatting and Static Analysis
+[![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
+[![code style: prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/.prettierrc.json)
 
 
 # What's New
