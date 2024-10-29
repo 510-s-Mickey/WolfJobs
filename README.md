@@ -161,6 +161,12 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 #### `docker compose down`
 - Removes Docker containers
 
+#### `npm run lint:back`
+- runs EsLint static analysis tool on the backend code
+
+#### `npm run lint:front`
+- runs EsLint static analysis tool on the frontend code
+
 ### Frontend Directory 
 Accessible by `cd frontend` from the parent directory: WolfJobs.
 
@@ -175,6 +181,9 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 
 #### `npm test`
 - Runs backend tests
+
+#### `npm run coverage`
+- Runs backend coverage
 
 # Future Improvements
 
@@ -193,8 +202,6 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 **7. Database Security and Hashing** – WolfJobs currently does not securely store the password and user information in the database. This data needs to be protected and hashed to ensure security.
 
 **8. Refactoring of Backend** - Reference the note attached to architecture diagram. There are multiple index.js files that reference eachother and should be consolidated. In addition, error codes and messages within the API should be updated to be more specific to the error. Currently they are all set to 500, "Internal Server Error".
-
-**9. Fix Resume Storage and View** - Wolfjobs currently does not display resumes stored in the databases.
 
 # Contributors
 
