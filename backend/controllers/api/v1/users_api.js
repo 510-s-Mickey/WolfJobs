@@ -13,12 +13,12 @@ module.exports.createSession = async function (req, res) {
     let user = await User.findOne({ email: req.body.email });
     res.set("Access-Control-Allow-Origin", "*");
     if (!user || user.password != req.body.password) {
-      return res.json(422, {
+      return res.status(422).json({
         message: "Invalid username or password",
       });
     }
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "Sign In Successful, here is your token, please keep it safe",
       data: {
         token: jwt.sign(user.toJSON(), "wolfjobs", { expiresIn: "100000" }),
@@ -28,7 +28,7 @@ module.exports.createSession = async function (req, res) {
     });
   } catch (err) {
     console.log("*******", err);
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -37,7 +37,7 @@ module.exports.createSession = async function (req, res) {
 module.exports.signUp = async function (req, res) {
   try {
     if (req.body.password != req.body.confirm_password) {
-      return res.json(422, {
+      return res.status(422).json({
         message: "Passwords donot match",
       });
     }
@@ -45,7 +45,7 @@ module.exports.signUp = async function (req, res) {
     User.findOne({ email: req.body.email }, function (err, user) {
       if (user) {
         res.set("Access-Control-Allow-Origin", "*");
-        return res.json(200, {
+        return res.status(400).json({
           message: "Sign Up Successful, here is your token, plz keep it safe",
 
           data: {
@@ -64,14 +64,14 @@ module.exports.signUp = async function (req, res) {
         let user = User.create(req.body, function (err, user) {
           if (err) {
             console.log(err);
-            return res.json(500, {
+            return res.status(500).json({
               message: "Internal Server Error",
             });
           }
 
           // let userr = User.findOne({ email: req.body.email });
           res.set("Access-Control-Allow-Origin", "*");
-          return res.json(200, {
+          return res.status(200).json({
             message: "Sign Up Successful, here is your token, plz keep it safe",
 
             data: {
@@ -86,7 +86,7 @@ module.exports.signUp = async function (req, res) {
           });
         });
       } else {
-        return res.json(500, {
+        return res.status(500).json({
           message: "Internal Server Error",
         });
       }
@@ -94,7 +94,7 @@ module.exports.signUp = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -104,7 +104,7 @@ module.exports.getProfile = async function (req, res) {
   try {
     let user = await User.findById(req.params.id);
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "The User info is",
 
       data: {
@@ -118,7 +118,7 @@ module.exports.getProfile = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -142,7 +142,7 @@ module.exports.editProfile = async function (req, res) {
     user.skills = check;
     user.save();
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(500).json({
       message: "User is updated Successfully",
 
       data: {
@@ -158,15 +158,10 @@ module.exports.editProfile = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
-  // } else {
-  //   return res.json(400, {
-  //     message: "Bad Request",
-  //   });
-  // }
 };
 module.exports.searchUser = async function (req, res) {
   try {
@@ -174,7 +169,7 @@ module.exports.searchUser = async function (req, res) {
 
     let users = await Job.find({ name: regex });
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "The list of Searched Users",
 
       data: {
@@ -188,7 +183,7 @@ module.exports.searchUser = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -213,7 +208,7 @@ module.exports.createJob = async function (req, res) {
       question4: req.body.question4,
     });
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       data: {
         job: job,
         //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
@@ -224,7 +219,7 @@ module.exports.createJob = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "NOT CREATED",
     });
   }
@@ -235,7 +230,7 @@ module.exports.index = async function (req, res) {
 
   //Whenever we want to send back JSON data
   res.set("Access-Control-Allow-Origin", "*");
-  return res.json(200, {
+  return res.status(200).json({
     message: "List of jobs",
 
     jobs: jobs,
@@ -247,7 +242,7 @@ module.exports.fetchApplication = async function (req, res) {
 
   //Whenever we want to send back JSON data
   res.set("Access-Control-Allow-Origin", "*");
-  return res.json(200, {
+  return res.status(200).json({
     message: "List of Applications",
 
     application: application,
@@ -266,7 +261,7 @@ module.exports.createApplication = async function (req, res) {
 
     if (existingApplication) {
       res.set("Access-Control-Allow-Origin", "*");
-      return res.json(400, {
+      return res.status(400).json({
         message: "You have already applied for the job",
         error: true,
       });
@@ -289,7 +284,7 @@ module.exports.createApplication = async function (req, res) {
       managerid: req.body.managerid,
     });
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       data: {
         application: application,
         //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
@@ -300,7 +295,7 @@ module.exports.createApplication = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "NOT CREATED",
     });
   }
@@ -325,7 +320,7 @@ module.exports.modifyApplication = async function (req, res) {
     }
     application.save();
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "Application is updated Successfully",
       data: {
         application,
@@ -335,7 +330,7 @@ module.exports.modifyApplication = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -349,7 +344,7 @@ module.exports.acceptApplication = async function (req, res) {
 
     application.save();
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "Application is updated Successfully",
 
       data: {
@@ -365,7 +360,7 @@ module.exports.acceptApplication = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -379,7 +374,7 @@ module.exports.rejectApplication = async function (req, res) {
 
     application.save();
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "Application is updated Successfully",
 
       data: {
@@ -395,7 +390,7 @@ module.exports.rejectApplication = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -409,7 +404,7 @@ module.exports.closeJob = async function (req, res) {
 
     job.save();
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       message: "Job is updated Successfully",
 
       data: {
@@ -425,7 +420,7 @@ module.exports.closeJob = async function (req, res) {
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -462,14 +457,14 @@ module.exports.generateOtp = async function (req, res) {
     await getTransport().sendMail(mailOptions);
 
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(500).json({
       success: true,
       message: "OTP is generated Successfully",
     });
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }
@@ -483,7 +478,7 @@ module.exports.verifyOtp = async function (req, res) {
     });
 
     if (!authOtp) {
-      return res.json(422, {
+      return res.status(422).json({
         error: true,
         message: "OTP is not correct",
       });
@@ -497,14 +492,14 @@ module.exports.verifyOtp = async function (req, res) {
     );
 
     res.set("Access-Control-Allow-Origin", "*");
-    return res.json(200, {
+    return res.status(200).json({
       success: true,
       message: "OTP is verified Successfully",
     });
   } catch (err) {
     console.log(err);
 
-    return res.json(500, {
+    return res.status(500).json({
       message: "Internal Server Error",
     });
   }

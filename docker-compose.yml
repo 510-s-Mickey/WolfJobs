@@ -1,0 +1,30 @@
+# "host":"7a772ea46c96"
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      db:
+        condition: service_healthy
+    # command: sh -c "ping db && npm start"
+    # command: sh -c "until nc -z db 27017; do echo 'Waiting for MongoDB...'; sleep 2; done && npm start"
+    environment:
+      - MONGO_URL=mongodb://db:27017/mydatabase
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 5173:5173
+  db: #mongosh --host localhost --port 27017
+    image: mongo
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    ports:
+      - 27017:27017

@@ -18,6 +18,8 @@
 [![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
+<!-- the tool used to generate the backend coverage badge, just run npm run coverage:badge from home directory with ![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$) where you want the badge to be generated in the README.
+https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 # Tech Stack 
 <!-- Really Good Reference: https://github.com/Ileriayo/markdown-badges -->

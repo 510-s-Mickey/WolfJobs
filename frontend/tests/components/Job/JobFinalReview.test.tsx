@@ -12,7 +12,7 @@ describe("obFinalReview", () => {
     expect(screen.getByText("Review"));
     expect(screen.getByText("Accepted Candidates"));
     expect(screen.getByText("Rejected Candidates"));
-    let listEmpty = screen.getAllByText(/list empty/i);
+    const listEmpty = screen.getAllByText(/list empty/i);
     expect(listEmpty.length == 2);
   });
 });
