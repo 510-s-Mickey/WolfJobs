@@ -56,8 +56,9 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 #### Code Formatting and Static Analysis
-[![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
 [![code style: prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/.prettierrc.json)
+[![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
+
 
 
 # What's New
