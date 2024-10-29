@@ -22,7 +22,7 @@ const ResumeDropzone: React.FC<ResumeDropzoneProps> = ({ onFileUpload }) => {
   const dropzoneOptions: DropzoneOptions = {
     onDrop,
     accept: { "application/pdf": [".pdf"] },
-    maxSize: 15 * 1024 * 1024, // limit the size to 15mb max to agree with the backend
+    maxSize: 2 * 1024 * 1024, 
   };
 
   const { getRootProps, getInputProps, isDragActive } =

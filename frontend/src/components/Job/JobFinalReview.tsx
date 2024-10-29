@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useApplicationStore } from "../../store/ApplicationStore";
 import { useSearchParams } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const JobFinalReview = (props: any) => {
   const { jobData }: { jobData: Job } = props;
@@ -9,6 +11,20 @@ const JobFinalReview = (props: any) => {
   const [searchParams] = useSearchParams();
 
   const applicationList = useApplicationStore((state) => state.applicationList);
+
+  const handleViewResume = useCallback(async (applicantId: string) => {
+    try {
+      const response = await axios.get(`http://localhost:8000/users/applicantresume/${applicantId}`, {
+        responseType: 'blob'
+      });
+      const file = new Blob([response.data], {type: 'application/pdf'});
+      const fileURL = URL.createObjectURL(file);
+      window.open(fileURL, '_blank');
+    } catch (error) {
+      console.error('Error fetching resume:', error);
+      toast.error('Failed to fetch resume');
+    }
+  }, []);
 
   useEffect(() => {
     setAcceptedList(
@@ -43,9 +59,13 @@ const JobFinalReview = (props: any) => {
                   <div>Skills: {item.applicantSkills}</div>
                 )}
                 <div className="flex justify-center px-2 py-1 ml-2 border border-gray-300 rounded-md">
-                  <a
-                    href={`/resumeviewer/${item.applicantid}`}
+                <a
+                    href="#"
                     className="text-red-500"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleViewResume(item.applicantid);
+                    }}
                   >
                     View Resume
                   </a>
