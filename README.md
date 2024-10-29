@@ -23,7 +23,7 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 <!-- Really Good Reference: https://github.com/Ileriayo/markdown-badges -->
 
 #### Code Coverage
-**Frontend Coverage**\
+**Frontend Coverage:**
 [![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)\
 **Backend Coverage**
 
