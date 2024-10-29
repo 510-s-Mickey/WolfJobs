@@ -68,7 +68,7 @@
 
 
 ### Documented the application architecture in a software architecture diagram
-![Diagram](resources/Arch Diagram.png)
+![Diagram](https://github.com/SE-Fall-2024/WolfJobs/blob/8419fbad97401bcd7af3ad86e54d106febea0751/resources/Arch%20Diagram.png)
 
 NOTE: Note about routes/v1/index.js step
 From the backend/index.js file, it points to the /routers folder which contains an index.js file which points to another index.js which checks a user.js file for API endpoints, and then checks the final routes/api/v1/index.js and routes/api/v1/user.js. The different index.js files point to each other while checking the same level user.js files for API endpoints until it hits the routes/v1/user.js which contains the majority of the API endpoints. It took us awhile to figure this out and we wanted to document how it worked.
