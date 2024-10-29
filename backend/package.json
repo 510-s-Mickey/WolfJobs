@@ -9,11 +9,11 @@
     "coverage": "NODE_ENV=test nyc mocha --recursive --exit"
   },
   "keywords": [
-    "Calorie",
-    "webapp"
+    "job",
+    "on-campus"
   ],
-  "author": "Group 28",
-  "license": "ISC",
+  "author": "Group 13",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.2",
     "connect-mongo": "^4.5.0",
