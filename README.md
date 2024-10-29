@@ -62,6 +62,7 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 #### Code Formatting and Static Analysis
+
 [![code style: prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/.prettierrc.json)
 [![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
 
@@ -75,7 +76,7 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 - Implemented Prettier formating and EsLinting for style consistancy and static analysis
 - Used In-Memory MongoDB databases to create a new MongoDB database in memory when testing the backend every time
 - Fixed backend tests to no longer timeout and implemented a test suite of backend tests using ^
-
+- Updated and fixed resume uploading/viewing capabilities
 
 
 ### Documented the application architecture in a software architecture diagram
@@ -121,26 +122,43 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ![Questionaire](resources/Applicant%20Filling%20answers.gif)
 
+### Upload Resume
+
+![Applicant Upload Resume](resources/Applicant-Upload%20Resume.gif)
+
+### View Resume That Has Already Been Uploaded
+
+![Applicant View Resume](resources/Applicant-Resume.gif)
+
 ## Manager Side
 
 ### Manager Sign Up
+
 ![Manager Sign Up](resources/Manager%20-%20Sign%20Up.gif)
 
 ### Manager Login
+
 ![Manager Login](resources/Manager%20-%20Login.gif)
 
 ### Edit Profile
+
 ![Edit Profile](resources/Open%20%26%20Edit%20Profile.gif)
 
 ### Add/Close Job
+
 ![Add/Close Job](resources/Add%20%26%20Close%20Job.gif)
 
 ### Screening
+
 ![Screening](resources/Manager%20-%20Screening.gif)
 
 ### Review & Accept Applications
+
 ![Review Applications](resources/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
 
+### View Resume
+
+![Manager Upload Resume](resources/Manager-Resume.gif)
 
 # Installation Instructions for Project Setup
 <!-- Need to update this!! Especially if we dockerize -->
