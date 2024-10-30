@@ -13,9 +13,7 @@
 [![Top Language](https://img.shields.io/github/languages/top/SE-Fall-2024/wolfjobs)](https://GitHub.com/SE-Fall-2024/Wolfjobs/)
 [![DOI](https://zenodo.org/badge/429097663.svg)](https://zenodo.org/badge/latestdoi/429097663) TODO
 [![Release](https://img.shields.io/github/v/release/deepr41/wolfjobs)](https://gitHub.com/SE-Fall-2024/Wolfjobs) TODO
-[![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/.prettierrc.json)
-[![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
+
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
 <!-- the tool used to generate the backend coverage badge, just run npm run coverage:badge from home directory with ![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$) where you want the badge to be generated in the README.
@@ -23,6 +21,12 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 # Tech Stack 
 <!-- Really Good Reference: https://github.com/Ileriayo/markdown-badges -->
+
+#### Code Coverage
+**Frontend Coverage:**
+[![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)\
+**Backend Coverage:**
+![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$)
 
 #### Backend Technologies
 
@@ -57,6 +61,12 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
+#### Code Formatting and Static Analysis
+
+[![code style: prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/.prettierrc.json)
+[![EsLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](https://github.com/SE-Fall-2024/WolfJobs/blob/master/eslint.config.mjs)
+
+
 
 # What's New
 
@@ -66,11 +76,11 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 - Implemented Prettier formating and EsLinting for style consistancy and static analysis
 - Used In-Memory MongoDB databases to create a new MongoDB database in memory when testing the backend every time
 - Fixed backend tests to no longer timeout and implemented a test suite of backend tests using ^
-
+- Updated and fixed resume uploading/viewing capabilities
 
 
 ### Documented the application architecture in a software architecture diagram
-![Diagram](resources/Arch Diagram.png)
+![Diagram](https://github.com/SE-Fall-2024/WolfJobs/blob/8419fbad97401bcd7af3ad86e54d106febea0751/resources/Arch%20Diagram.png)
 
 NOTE: Note about routes/v1/index.js step
 From the backend/index.js file, it points to the /routers folder which contains an index.js file which points to another index.js which checks a user.js file for API endpoints, and then checks the final routes/api/v1/index.js and routes/api/v1/user.js. The different index.js files point to each other while checking the same level user.js files for API endpoints until it hits the routes/v1/user.js which contains the majority of the API endpoints. It took us awhile to figure this out and we wanted to document how it worked.
@@ -112,29 +122,45 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ![Questionaire](resources/Applicant%20Filling%20answers.gif)
 
+### Upload Resume
+
+![Applicant Upload Resume](resources/Applicant-Upload%20Resume.gif)
+
+### View Resume That Has Already Been Uploaded
+
+![Applicant View Resume](resources/Applicant-Resume.gif)
+
 ## Manager Side
 
 ### Manager Sign Up
+
 ![Manager Sign Up](resources/Manager%20-%20Sign%20Up.gif)
 
 ### Manager Login
+
 ![Manager Login](resources/Manager%20-%20Login.gif)
 
 ### Edit Profile
+
 ![Edit Profile](resources/Open%20%26%20Edit%20Profile.gif)
 
 ### Add/Close Job
+
 ![Add/Close Job](resources/Add%20%26%20Close%20Job.gif)
 
 ### Screening
+
 ![Screening](resources/Manager%20-%20Screening.gif)
 
 ### Review & Accept Applications
+
 ![Review Applications](resources/Manager%20-%20Grade%2C%20Review%20%26%20Accept%20Candidates.gif)
 
+### View Resume
+
+![Manager Upload Resume](resources/Manager-Resume.gif)
 
 # Installation Instructions for Project Setup
-<!-- Need to update this!! Especially if we dockerize -->
 
 **Prerequisites:**
 
@@ -161,6 +187,12 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 #### `docker compose down`
 - Removes Docker containers
 
+#### `npm run lint:back`
+- runs EsLint static analysis tool on the backend code
+
+#### `npm run lint:front`
+- runs EsLint static analysis tool on the frontend code
+
 ### Frontend Directory 
 Accessible by `cd frontend` from the parent directory: WolfJobs.
 
@@ -175,6 +207,9 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 
 #### `npm test`
 - Runs backend tests
+
+#### `npm run coverage`
+- Runs backend coverage
 
 # Future Improvements
 
@@ -192,9 +227,7 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 
 **7. Database Security and Hashing** – WolfJobs currently does not securely store the password and user information in the database. This data needs to be protected and hashed to ensure security.
 
-**8. Refactoring of Backend** - Reference the note attached to architecture diagram. There are multiple index.js files that reference eachother and should be consolidated.
-
-**9. Fix Resume Storage and View** - Wolfjobs currently does not display resumes stored in the databases.
+**8. Refactoring of Backend** - Reference the note attached to architecture diagram. There are multiple index.js files that reference eachother and should be consolidated. In addition, error codes and messages within the API should be updated to be more specific to the error. Currently they are all set to 500, "Internal Server Error".
 
 # Contributors
 
