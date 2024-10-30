@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import JobListView from "../../../src/components/Job/JobListView";
 import { MemoryRouter } from "react-router-dom";
 
@@ -9,5 +9,6 @@ describe("JobListView", () => {
         <JobListView JobList={{ _id: 1 }} title="All jobs" />
       </MemoryRouter>
     );
+    expect(screen.getByText("All jobs"));
   });
 });

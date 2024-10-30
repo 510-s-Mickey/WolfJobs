@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import JobGrading from "../../../src/components/Job/JobGrading";
 import { MemoryRouter } from "react-router";
 
@@ -17,5 +17,7 @@ describe("JobGrading", () => {
         />
       </MemoryRouter>
     );
+    expect(screen.getByText("Grading"));
+    expect(screen.getByText("List empty"));
   });
 });
