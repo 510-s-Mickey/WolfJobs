@@ -161,7 +161,6 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 ![Manager Upload Resume](resources/Manager-Resume.gif)
 
 # Installation Instructions for Project Setup
-<!-- Need to update this!! Especially if we dockerize -->
 
 **Prerequisites:**
 
