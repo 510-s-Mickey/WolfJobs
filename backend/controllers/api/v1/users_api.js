@@ -8,6 +8,13 @@ const nodemailer = require("nodemailer");
 
 require("dotenv").config();
 
+/**
+ * Creates a new session for users
+ * @param {*} req 
+ * @param {*} res 
+ * @returns A success message with a successful sign in or an error message 
+ * with invalid login credentials or server errors
+ */
 module.exports.createSession = async function (req, res) {
   try {
     let user = await User.findOne({ email: req.body.email });
