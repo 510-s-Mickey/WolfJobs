@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: home_controller.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,30 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: home_controller.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Returns the home page for Wolf Jobs, corresponds to
+ * the API Route /controllers/home_controller
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns the home page for WolfJobs
+ */
+module.exports.home = function (req, res) {
+  return res.render("home", {
+    title: "Home",
+  });
+};
+</code></pre>
+        </article>
+    </section>
 
 
 
