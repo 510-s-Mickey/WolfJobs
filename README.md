@@ -198,6 +198,12 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 #### `npm run lint:front`
 - runs EsLint static analysis tool on the frontend code
 
+#### `npm run style:back`
+- runs the Prettier code formatter tool on the backend code
+
+#### `npm run style:front`
+- runs the Prettier code formatter tool on the backend code
+
 ### Frontend Directory 
 Accessible by `cd frontend` from the parent directory: WolfJobs.
 
