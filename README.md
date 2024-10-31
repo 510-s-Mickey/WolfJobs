@@ -162,15 +162,16 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 # Installation Instructions for Project Setup
 
-**Prerequisites:**
+**Required Prerequisites:**
 
 - Download and install the latest version of MongoDB from [MongoDB Official Website.](https://www.mongodb.com/try/download/community)
     - You can also install MongoDB using a package manager such as `brew`
+- Download and install [Docker desktop](https://docs.docker.com/engine/install/) for your respective OS.
 
 **Step 1: Clone the Repository from this [link](https://github.com/SE-Fall-2024/WolfJobs)**
 
 **Step 2: Prerequisites**
-- Make sure [Docker]([url](https://www.docker.com/)) is downloaded.
+- Make sure [Docker]([url](https://www.docker.com/)) and MongoDB is downloaded and installed.
 
 **Step 3: Run WolfJobs**
 - Open a terminal window and navigate to the home directory (WolfJobs)
