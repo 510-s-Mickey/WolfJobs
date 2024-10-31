@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 /**
- * Returns the page for the user's profile, corresponds to 
+ * Returns the page for the user's profile, corresponds to
  * the API route /profile
  * @param {*} req response from users
  * @param {*} res status of request
@@ -31,7 +31,7 @@ module.exports.signUp = function (req, res) {
 };
 
 /**
- * Returns the page for signing in an existing user, corresponds 
+ * Returns the page for signing in an existing user, corresponds
  * to the API Route /sign-in
  * @param {*} req response from users
  * @param {*} res status of request

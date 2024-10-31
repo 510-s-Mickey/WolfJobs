@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 /**
- * Represents a schema for storing user data including the 
+ * Represents a schema for storing user data including the
  * email, password, name, role, address, phone number, hours,
  * date of birth, gender, availability, affiliation, skills,
- * resume, resume ID, timestamps, and whether the user is verified.  
+ * resume, resume ID, timestamps, and whether the user is verified.
  */
 const userSchema = new mongoose.Schema(
   {

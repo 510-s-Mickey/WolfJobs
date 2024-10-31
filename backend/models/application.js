@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 /**
- * Represents a schema for storing application data including the 
- * jobID, name, hours, applicantID, name, email, skills, phone number, 
- * address, date of birth, gender, managerID, the application status, 
+ * Represents a schema for storing application data including the
+ * jobID, name, hours, applicantID, name, email, skills, phone number,
+ * address, date of birth, gender, managerID, the application status,
  * answers to questions, and the rating
  */
 const applicationSchema = new mongoose.Schema({
