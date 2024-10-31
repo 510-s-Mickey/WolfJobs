@@ -43,8 +43,8 @@ module.exports.createSession = async function (req, res) {
 
 /**
  * Signs up the user with valid credentials
- * @param {*} req
- * @param {*} res
+ * @param {*} req response from users
+ * @param {*} res status of request
  * @returns status message with signup
  */
 module.exports.signUp = async function (req, res) {
