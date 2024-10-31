@@ -2,8 +2,8 @@ const User = require("../models/user");
 
 /**
  * Returns the user's profile
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  * @returns the user's profile
  */
 module.exports.profile = function (req, res) {
