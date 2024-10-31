@@ -11,8 +11,8 @@
 [![language_count](https://img.shields.io/github/languages/count/SE-Fall-2024/Wolfjobs)](https://GitHub.com/SE-Fall-2024/Wolfjobs/)
 [![Downloads](https://img.shields.io/github/downloads/SE-Fall-2024/WolfJobs/total)](https://GitHub.com/SE-Fall-2024/Wolfjobs/)
 [![Top Language](https://img.shields.io/github/languages/top/SE-Fall-2024/wolfjobs)](https://GitHub.com/SE-Fall-2024/Wolfjobs/)
-[![DOI](https://zenodo.org/badge/429097663.svg)](https://zenodo.org/badge/latestdoi/429097663) TODO
-[![Release](https://img.shields.io/github/v/release/deepr41/wolfjobs)](https://gitHub.com/SE-Fall-2024/Wolfjobs) TODO
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14019199.svg)](https://doi.org/10.5281/zenodo.14019199)
+[![Release](https://github.com/SE-Fall-2024/WolfJobs/releases/tag/v0.0.1)
 
 
 <!-- ![Static Badge](https://img.shields.io/badge/any_text-i_like-blue) -->
