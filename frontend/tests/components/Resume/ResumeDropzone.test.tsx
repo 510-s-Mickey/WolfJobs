@@ -6,11 +6,17 @@ describe("ResumeViewer", () => {
   it("renders ResumeViewer", () => {
     render(
       <MemoryRouter>
-        <ResumeDropzone onFileUpload={function (files: File[]): void {
-                throw new Error("Function not implemented.");
-            } } />
+        <ResumeDropzone
+          onFileUpload={function (files: File[]): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
       </MemoryRouter>
     );
-    expect(screen.getAllByText(/Drag 'n' drop some files here, or click to select files/));
+    expect(
+      screen.getAllByText(
+        /Drag 'n' drop some files here, or click to select files/
+      )
+    );
   });
 });

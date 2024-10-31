@@ -14,15 +14,18 @@ const JobFinalReview = (props: any) => {
 
   const handleViewResume = useCallback(async (applicantId: string) => {
     try {
-      const response = await axios.get(`http://localhost:8000/users/applicantresume/${applicantId}`, {
-        responseType: 'blob'
-      });
-      const file = new Blob([response.data], {type: 'application/pdf'});
+      const response = await axios.get(
+        `http://localhost:8000/users/applicantresume/${applicantId}`,
+        {
+          responseType: "blob",
+        }
+      );
+      const file = new Blob([response.data], { type: "application/pdf" });
       const fileURL = URL.createObjectURL(file);
-      window.open(fileURL, '_blank');
+      window.open(fileURL, "_blank");
     } catch (error) {
-      console.error('Error fetching resume:', error);
-      toast.error('Failed to fetch resume');
+      console.error("Error fetching resume:", error);
+      toast.error("Failed to fetch resume");
     }
   }, []);
 
@@ -59,7 +62,7 @@ const JobFinalReview = (props: any) => {
                   <div>Skills: {item.applicantSkills}</div>
                 )}
                 <div className="flex justify-center px-2 py-1 ml-2 border border-gray-300 rounded-md">
-                <a
+                  <a
                     href="#"
                     className="text-red-500"
                     onClick={(e) => {

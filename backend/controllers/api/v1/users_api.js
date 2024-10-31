@@ -12,7 +12,7 @@ require("dotenv").config();
  * Creates a new session for users
  * @param {*} req response from users
  * @param {*} res status
- * @returns A success message with a successful sign in or an error message 
+ * @returns A success message with a successful sign in or an error message
  * with invalid login credentials or server errors
  */
 module.exports.createSession = async function (req, res) {
@@ -43,8 +43,8 @@ module.exports.createSession = async function (req, res) {
 
 /**
  * Signs up the user with valid credentials
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  * @returns status message with signup
  */
 module.exports.signUp = async function (req, res) {

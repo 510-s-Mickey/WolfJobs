@@ -32,18 +32,18 @@ const Resume: React.FC = () => {
               "Content-Type": "multipart/form-data",
             },
             onUploadProgress: (progressEvent) => {
-              const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total!);
+              const progress = Math.round(
+                (progressEvent.loaded * 100) / progressEvent.total!
+              );
               setUploadProgress(progress);
-            }
+            },
           }
         );
 
         if (response.status === 201) {
           console.log("Resume uploaded successfully");
           console.log(userId);
-          toast.success(
-            "Resume Uploaded Successfully!"
-          );
+          toast.success("Resume Uploaded Successfully!");
           updateResume(file.name);
           updateResumeId(response.data.resumeId);
         }
@@ -60,7 +60,7 @@ const Resume: React.FC = () => {
   const getFilePreviewUrl = () => {
     if (!file) return null;
     return URL.createObjectURL(file);
-  }
+  };
 
   return (
     <>
@@ -81,17 +81,24 @@ const Resume: React.FC = () => {
               fontSize: "16px",
             }}
           >
-            {isUploading ?  `Uploading... ${uploadProgress}%` : 'Upload Resume!'}
+            {isUploading ? `Uploading... ${uploadProgress}%` : "Upload Resume!"}
           </Button>
 
           {file && !isUploading && (
-              <div className="mt-4">
-                <p> Selected file: {file.name}</p>
-                {getFilePreviewUrl() && (
-                  <a href={getFilePreviewUrl()!} target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 mt-2 font-bold text-white bg-red-500 rounded">Preview File</a> 
-                )}
-              </div>
-            )}
+            <div className="mt-4">
+              <p> Selected file: {file.name}</p>
+              {getFilePreviewUrl() && (
+                <a
+                  href={getFilePreviewUrl()!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 mt-2 font-bold text-white bg-red-500 rounded"
+                >
+                  Preview File
+                </a>
+              )}
+            </div>
+          )}
 
           {resumeName && (
             <div className="mt-4">

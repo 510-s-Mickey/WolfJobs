@@ -17,48 +17,59 @@ const JobScreening = ({ jobData }: { jobData: Job }) => {
     );
   }, [applicationList, jobData._id]);
 
-  const handleStatusChange = useCallback(async (applicationId: string, status: string) => {
-    let url = "http://localhost:8000/api/v1/users/";
+  const handleStatusChange = useCallback(
+    async (applicationId: string, status: string) => {
+      let url = "http://localhost:8000/api/v1/users/";
 
-    if (status === 'screening') {
-      url += "acceptapplication";
-    } else if (status === 'rejected') {
-      url += "rejectapplication";
-    } else {
-      console.error("Invalid status");
-      return;
-    }
-
-    const body = {
-      applicationId: applicationId,
-    };
-
-    try {
-
-      const response = await axios.post(url, body);
-      if (response.status === 200) {
-        toast.success(`${status === 'screening' ? 'Accepted' : 'Rejected'} candidate`);
-        setDisplayList(prevList => prevList.filter(item => item._id !== applicationId));
+      if (status === "screening") {
+        url += "acceptapplication";
+      } else if (status === "rejected") {
+        url += "rejectapplication";
       } else {
-        throw new Error('Failed to update status');
+        console.error("Invalid status");
+        return;
       }
-    } catch (error) {
-      console.error("Error updating application status:", error);
-      toast.error(`Failed to ${status === 'screening' ? 'accept' : 'reject'} candidate`);
-    }
-  }, []);
+
+      const body = {
+        applicationId: applicationId,
+      };
+
+      try {
+        const response = await axios.post(url, body);
+        if (response.status === 200) {
+          toast.success(
+            `${status === "screening" ? "Accepted" : "Rejected"} candidate`
+          );
+          setDisplayList((prevList) =>
+            prevList.filter((item) => item._id !== applicationId)
+          );
+        } else {
+          throw new Error("Failed to update status");
+        }
+      } catch (error) {
+        console.error("Error updating application status:", error);
+        toast.error(
+          `Failed to ${status === "screening" ? "accept" : "reject"} candidate`
+        );
+      }
+    },
+    []
+  );
 
   const handleViewResume = useCallback(async (applicantId: string) => {
     try {
-      const response = await axios.get(`http://localhost:8000/users/applicantresume/${applicantId}`, {
-        responseType: 'blob'
-      });
-      const file = new Blob([response.data], {type: 'application/pdf'});
+      const response = await axios.get(
+        `http://localhost:8000/users/applicantresume/${applicantId}`,
+        {
+          responseType: "blob",
+        }
+      );
+      const file = new Blob([response.data], { type: "application/pdf" });
       const fileURL = URL.createObjectURL(file);
-      window.open(fileURL, '_blank');
+      window.open(fileURL, "_blank");
     } catch (error) {
-      console.error('Error fetching resume:', error);
-      toast.error('Failed to fetch resume');
+      console.error("Error fetching resume:", error);
+      toast.error("Failed to fetch resume");
     }
   }, []);
 
@@ -95,7 +106,7 @@ const JobScreening = ({ jobData }: { jobData: Job }) => {
               <div className="flex flex-row">
                 <Button
                   onClick={() => {
-                    return handleStatusChange(item._id, 'screening');
+                    return handleStatusChange(item._id, "screening");
                   }}
                   style={{ color: "#FF5353" }}
                 >
@@ -103,7 +114,7 @@ const JobScreening = ({ jobData }: { jobData: Job }) => {
                 </Button>
                 <Button
                   onClick={() => {
-                    return handleStatusChange(item._id, 'rejected');
+                    return handleStatusChange(item._id, "rejected");
                   }}
                   style={{ color: "#FF5353" }}
                 >
