@@ -2,7 +2,7 @@
 ### Group 13: Nick Case, Hannah Estes, Satwika Kancharla
 
 - [ ] 15 minute demo with tutor
-- [x] Poster for Project ([found here](https://github.com/SE-Fall-2024/WolfJobs/blob/ecbd78cb3408ecbebe7429485b18cdc64dcacd65/Project%202/CSC%20510%20Posters%20(2).pdf))
+- [x] Poster for Project ([found here](https://github.com/SE-Fall-2024/WolfJobs/blob/48184f3c086833c05fde40857ab7fe7c39f114d0/Project%202/CSC%20510%20Posters.pdf))
 
 ### Repository Rubric
 | Notes                                                                                                                                                               | Contribution | Evidence                                                                                                                                                                                                         |
