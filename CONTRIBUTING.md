@@ -20,13 +20,15 @@ The following is a set of guidelines for contributing to WolfJobs. We are open t
 
 We have created labels for each issue for proper ordering and this will help you select an issue you would like to work on.
 
-- The [`documentation` label](https://github.com/ashakhatri007/CSC510_Group25_Project1/projects/1?card_filter_query=label%3Adocumentation) is for problems regarding the entire documentation of this repo.
+- The [`documentation` label](https://github.com/SE-Fall-2024/WolfJobs/labels/documentation) is for problems regarding the entire documentation of this repo.
 
-- The [`enchancement` label](https://github.com/ashakhatri007/CSC510_Group25_Project1/projects/1?card_filter_query=label%3Aenhancement) is for problems regarding any new / existing feature additions to be made in the project.
+- The [`enchancement` label](https://github.com/SE-Fall-2024/WolfJobs/labels/enhancement) is for problems regarding any new / existing feature additions to be made in the project.
 
-- The [`bug` label](https://github.com/ashakhatri007/CSC510_Group25_Project1/projects/1?card_filter_query=label%3Abug) is for problems related to any bugs or fixes than need to be taken care of.
+- The [`bug` label](https://github.com/SE-Fall-2024/WolfJobs/labels/bug) is for problems related to any bugs or fixes than need to be taken care of.
 
-- The [`tests` label](https://github.com/ashakhatri007/CSC510_Group25_Project1/issues?q=is%3Aissue+is%3Aopen+label%3Atests) Adding missing tests or correcting existing tests
+- The [`tests` label](https://github.com/SE-Fall-2024/WolfJobs/labels/testing) Adding missing tests or correcting existing tests
+
+- The [`design` label](https://github.com/SE-Fall-2024/WolfJobs/labels/design) Adding design documents, questions or corrections.
 
 ## How can I contribute?
 
