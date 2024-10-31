@@ -11,6 +11,8 @@ describe("obFinalReview", () => {
     );
     expect(screen.getByText("Review"));
     expect(screen.getByText("Accepted Candidates"));
+    const listAcceptedEmpty = screen.getAllByText(/list empty/i);
+    expect(listAcceptedEmpty.length == 2);
     expect(screen.getByText("Rejected Candidates"));
     const listEmpty = screen.getAllByText(/list empty/i);
     expect(listEmpty.length == 2);

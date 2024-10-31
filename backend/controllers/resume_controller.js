@@ -5,7 +5,7 @@ const User = require("../models/user");
 const multer = require("multer");
 
 const upload = multer({
-  limits: { fileSize: 2 * 1024 * 1024 }, // 15MB limit
+  limits: { fileSize: 2 * 1024 * 1024 },
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(pdf)$/)) {
       return cb(new Error("Please upload a PDF file"));

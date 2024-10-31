@@ -14,5 +14,6 @@ describe("JobRating", () => {
       </MemoryRouter>
     );
     expect(screen.getByText("Rating"));
+    expect(screen.getByText("List empty"));
   });
 });

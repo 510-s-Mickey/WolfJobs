@@ -162,16 +162,17 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 # Installation Instructions for Project Setup
 
-**Prerequisites:**
+**Required Prerequisites:**
 
-- Ensure that you have Node.js version 18.0 installed. If not, download and install it from [Node.js Official Website.](https://nodejs.org/en/download/)
-- Download and install the latest version of MongoDB from [MongoDB Official Website.](https://www.mongodb.com/try/download/community)
-- Make sure you have React version 18.0
+- Download and install the latest version of MongoDB from [MongoDB Official Website.](https://www.mongodb.com/try/download/community).
+    - You can also install MongoDB using a package manager such as `brew`.
+    - MongoDB will be used locally while running the backend and frontend tests.
+- Download and install [Docker desktop](https://docs.docker.com/engine/install/) for your respective OS.
 
 **Step 1: Clone the Repository from this [link](https://github.com/SE-Fall-2024/WolfJobs)**
 
 **Step 2: Prerequisites**
-- Make sure [Docker]([url](https://www.docker.com/)) is downloaded.
+- Make sure [Docker]([url](https://www.docker.com/)) and MongoDB is downloaded and installed.
 
 **Step 3: Run WolfJobs**
 - Open a terminal window and navigate to the home directory (WolfJobs)
@@ -184,6 +185,10 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 # Additional commands for WolfJobs
 
+## NOTE
+- Before running any of the additional commands, you must first run the command `npm i` in the WolfJobs directory, the WolfJobs/backend directory
+  and the WolfJobs/frontend directory to ensure that the local dependencies for testing, linting and the application will be installed.
+
 #### `docker compose down`
 - Removes Docker containers
 
@@ -192,6 +197,12 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 #### `npm run lint:front`
 - runs EsLint static analysis tool on the frontend code
+
+#### `npm run style:back`
+- runs the Prettier code formatter tool on the backend code
+
+#### `npm run style:front`
+- runs the Prettier code formatter tool on the backend code
 
 ### Frontend Directory 
 Accessible by `cd frontend` from the parent directory: WolfJobs.
