@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-// Auth OTP table
+/**
+ * Represents a schema for storing authentication data including the
+ * user iD, OTP, and the data that it was created
+ */
 const autoOtpSchema = new mongoose.Schema(
   {
     userId: {
