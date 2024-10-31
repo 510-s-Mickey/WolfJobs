@@ -72,7 +72,8 @@ If you have ideas, questions, or comments, please let us know in the [discussion
 
 # What's New
 
-- Implemented new GitHub Actions are documented and described in the Wiki [here](https://github.com/SE-Fall-2024/WolfJobs/wiki/Github-Actions-Documentation).
+- Updated previous GitHub Actions and implemented new GitHub Actions
+    - They are documented and described [here](https://github.com/SE-Fall-2024/WolfJobs/blob/master/GitHubActions.md).
 - Containerization of Entire Application! This provides a seamless process to build the application.
 - Minor changes to UI to match [style guide](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs).
 - Implemented Prettier formating and EsLinting for style consistancy and static analysis
