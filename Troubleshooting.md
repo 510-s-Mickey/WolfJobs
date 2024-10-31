@@ -66,7 +66,7 @@ Before troubleshooting, ensure:
 2. Docker installation went wrong
 
 **Solution:** 
-1. Perform a docker compose down
+1. Perform a `docker compose down`
 2. If that does not work, then go into Docker Desktop and delete the containers and their associated images.
 
 ## Getting Further Help
