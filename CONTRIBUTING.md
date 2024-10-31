@@ -33,7 +33,7 @@ We have created labels for each issue for proper ordering and this will help you
 ## How can I contribute?
 
 <h3 id="section2"> Reporting bugs</h3>
-<p>This section guides you through submitting a bug report for SE Group 28. </p>
+<p>This section guides you through submitting a bug report for WolfJobs. </p>
 
 When you are creating a bug report, please include as many details as possible to understand the issue.
 
@@ -67,4 +67,3 @@ The process described here has several goals:
 - Maintain WolfJobs quality
 - Fix problems that are important to users
 - Engage the community in working toward the best possible WolfJobs
-- Enable a sustainable system for Atom's maintainers to review contributions
