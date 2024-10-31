@@ -111,6 +111,8 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 # Application Preview:
 
+![AD Gif](resources/ad.gif)
+
 ## Applicant Side
 
 ### Signup & Login
