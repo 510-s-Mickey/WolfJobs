@@ -164,9 +164,8 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 **Prerequisites:**
 
-- Ensure that you have Node.js version 18.0 installed. If not, download and install it from [Node.js Official Website.](https://nodejs.org/en/download/)
 - Download and install the latest version of MongoDB from [MongoDB Official Website.](https://www.mongodb.com/try/download/community)
-- Make sure you have React version 18.0
+    - You can also install MongoDB using a package manager such as `brew`
 
 **Step 1: Clone the Repository from this [link](https://github.com/SE-Fall-2024/WolfJobs)**
 
@@ -183,6 +182,10 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 **Congratulations! The project should now be up and running successfully.**
 
 # Additional commands for WolfJobs
+
+## NOTE
+- Before running any of the additional commands, you must first run the command `npm i` in the WolfJobs directory, the WolfJobs/backend directory
+  and the WolfJobs/frontend directory to ensure that the local dependencies for testing, linting and the application will be installed.
 
 #### `docker compose down`
 - Removes Docker containers
