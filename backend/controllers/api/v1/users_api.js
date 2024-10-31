@@ -9,11 +9,11 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 /**
- * Creates a new session for users, corresponds to the API route 
+ * Creates a new session for users, corresponds to the API route
  * POST /create-session
  * @param {*} req response from users
  * @param {*} res status of request
- * @returns JSON object with a status message for successful sign in, 
+ * @returns JSON object with a status message for successful sign in,
  * invalid login credentials or server errors
  */
 module.exports.createSession = async function (req, res) {
@@ -223,7 +223,7 @@ module.exports.searchUser = async function (req, res) {
  * @param {*} req response from users
  * @param {*} res status of request
  * @returns JSON object with status message for succesful job
- * creation or for errors in the process 
+ * creation or for errors in the process
  */
 module.exports.createJob = async function (req, res) {
   let user = await User.findOne({ _id: req.body.id });
@@ -263,7 +263,7 @@ module.exports.createJob = async function (req, res) {
 /**
  * Gets the list of jobs for the user, corresponds to the API Route
  * /
- * 
+ *
  * @param {*} req response from users
  * @param {*} res status of request
  * @returns JSON object with the list of jobs
@@ -300,12 +300,12 @@ module.exports.fetchApplication = async function (req, res) {
 };
 
 /**
- * Creates a new application for the job (if already applied, sends 
+ * Creates a new application for the job (if already applied, sends
  * a message about that), corresponds to the API Route
  * /createapplication
  * @param {*} req respnse from users
  * @param {*} res status of request
- * @returns JSON object with a status message for successful 
+ * @returns JSON object with a status message for successful
  * application creation or about an already existing application
  */
 module.exports.createApplication = async function (req, res) {

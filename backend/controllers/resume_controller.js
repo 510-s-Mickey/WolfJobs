@@ -15,7 +15,7 @@ const upload = multer({
 });
 
 /**
- * Handles uploading a resume of a user, corresponds to the 
+ * Handles uploading a resume of a user, corresponds to the
  * API Route, /uploadResume
  * @param {*} req response from users
  * @param {*} res status of request
@@ -65,7 +65,7 @@ exports.uploadResume = async (req, res) => {
  * route, /applicantresume/:id
  * @param {*} req response from users
  * @param {*} res status of request
- * @returns the data of the resume or an error message if the 
+ * @returns the data of the resume or an error message if the
  * resume was not found
  */
 exports.getResume = async (req, res) => {
