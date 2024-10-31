@@ -240,6 +240,11 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 
 **8. Refactoring of Backend** - Reference the note attached to architecture diagram. There are multiple index.js files that reference eachother and should be consolidated. In addition, error codes and messages within the API should be updated to be more specific to the error. Currently they are all set to 500, "Internal Server Error".
 
+**9. Incorporate Shibboleth Login (NCSU login)** - Allow the option to login via Shibboleth to increase verification of NC State users.
+
+# Funding
+Currently not funded.
+
 # Contributors
 
   <table>
