@@ -1,7 +1,8 @@
 # Project 2 Rubric
 ### Group 13: Nick Case, Hannah Estes, Satwika Kancharla
 
-- [x] Poster for Project ([found here](https://github.com/SE-Fall-2024/WolfJobs/blob/48184f3c086833c05fde40857ab7fe7c39f114d0/Project%202/CSC%20510%20Posters.pdf))
+- Github Repository ([found here](https://github.com/SE-Fall-2024/WolfJobs/tree/master))
+- Poster for Project ([found here](https://github.com/SE-Fall-2024/WolfJobs/blob/48184f3c086833c05fde40857ab7fe7c39f114d0/Project%202/CSC%20510%20Posters.pdf))
 
 ### Repository Rubric
 | Notes                                                                                                                                                               | Contribution | Evidence                                                                                                                                                                                                         |
