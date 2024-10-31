@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 
+/**
+ * Represents a schema for storing job data including the name,
+ * managerID, manager affiliation, status, location, description,
+ * pay, required skills, type, and questions
+ */
 const jobSchema = new mongoose.Schema({
   name: {
     type: String,
