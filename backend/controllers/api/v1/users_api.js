@@ -9,11 +9,12 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 /**
- * Creates a new session for users
+ * Creates a new session for users, corresponds to the API route 
+ * POST /create-session
  * @param {*} req response from users
  * @param {*} res status of request
- * @returns A success message with a successful sign in or an error message 
- * with invalid login credentials or server errors
+ * @returns JSON object with a status message for successful sign in, 
+ * invalid login credentials or server errors
  */
 module.exports.createSession = async function (req, res) {
   try {
@@ -42,10 +43,12 @@ module.exports.createSession = async function (req, res) {
 };
 
 /**
- * Signs up the user with valid credentials
+ * Signs up the user with valid credentials, corresponds to the API route
+ * /signup
  * @param {*} req response from users
  * @param {*} res status of request
- * @returns status message with signup
+ * @returns JSON object with status message for successful signup, invalid
+ * credentials, or server errors
  */
 module.exports.signUp = async function (req, res) {
   try {
@@ -113,6 +116,14 @@ module.exports.signUp = async function (req, res) {
   }
 };
 
+/**
+ * Gets the user profile, corresponds to the API Route
+ * /getprofile/:id
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for user information or
+ * server errors
+ */
 module.exports.getProfile = async function (req, res) {
   try {
     let user = await User.findById(req.params.id);
@@ -121,9 +132,6 @@ module.exports.getProfile = async function (req, res) {
       message: "The User info is",
 
       data: {
-        //user.JSON() part gets encrypted
-
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
         user: user,
       },
       success: true,
@@ -137,8 +145,15 @@ module.exports.getProfile = async function (req, res) {
   }
 };
 
+/**
+ * Edits the user's profile, corresponds to the API Route
+ * /edit
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for successfully
+ * updated the users or server errors
+ */
 module.exports.editProfile = async function (req, res) {
-  // if (req.body.password == req.body.confirm_password) {
   try {
     let user = await User.findById(req.body.id);
 
@@ -150,7 +165,6 @@ module.exports.editProfile = async function (req, res) {
     user.hours = req.body.hours;
     user.availability = req.body.availability;
     user.gender = req.body.gender;
-    // user.dob = req.body.dob;
     check = req.body.skills;
     user.skills = check;
     user.save();
@@ -159,11 +173,6 @@ module.exports.editProfile = async function (req, res) {
       message: "User is updated Successfully",
 
       data: {
-        //user.JSON() part gets encrypted
-
-        // token: jwt.sign(user.toJSON(), env.jwt_secret, {
-        //   expiresIn: "100000",
-        // }),
         user,
       },
       success: true,
@@ -176,6 +185,15 @@ module.exports.editProfile = async function (req, res) {
     });
   }
 };
+
+/**
+ * Finds the list of searched users, corresponds to the API Route
+ * /search/:name
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with status message with the list of
+ * users or for server errors
+ */
 module.exports.searchUser = async function (req, res) {
   try {
     var regex = new RegExp(req.params.name, "i");
@@ -186,9 +204,6 @@ module.exports.searchUser = async function (req, res) {
       message: "The list of Searched Users",
 
       data: {
-        //user.JSON() part gets encrypted
-
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" }),
         users: users,
       },
       success: true,
@@ -202,6 +217,14 @@ module.exports.searchUser = async function (req, res) {
   }
 };
 
+/**
+ * Creates a new job and saves it to the database, corresponds to
+ * the API Route /createjob
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with status message for succesful job
+ * creation or for errors in the process 
+ */
 module.exports.createJob = async function (req, res) {
   let user = await User.findOne({ _id: req.body.id });
   check = req.body.skills;
@@ -224,7 +247,6 @@ module.exports.createJob = async function (req, res) {
     return res.status(200).json({
       data: {
         job: job,
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
       },
       message: "Job Created!!",
       success: true,
@@ -238,6 +260,14 @@ module.exports.createJob = async function (req, res) {
   }
 };
 
+/**
+ * Gets the list of jobs for the user, corresponds to the API Route
+ * /
+ * 
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with the list of jobs
+ */
 module.exports.index = async function (req, res) {
   let jobs = await Job.find({}).sort("-createdAt");
 
@@ -250,6 +280,13 @@ module.exports.index = async function (req, res) {
   });
 };
 
+/**
+ * Gets the list of applications, corresponds to the API Route
+ * /fetchapplications
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with the list of applications
+ */
 module.exports.fetchApplication = async function (req, res) {
   let application = await Application.find({}).sort("-createdAt");
 
@@ -262,10 +299,16 @@ module.exports.fetchApplication = async function (req, res) {
   });
 };
 
+/**
+ * Creates a new application for the job (if already applied, sends 
+ * a message about that), corresponds to the API Route
+ * /createapplication
+ * @param {*} req respnse from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for successful 
+ * application creation or about an already existing application
+ */
 module.exports.createApplication = async function (req, res) {
-  // let user = await User.findOne({ _id: req.body.id });
-  // check = req.body.skills;
-
   try {
     const existingApplication = await Application.findOne({
       applicantid: req.body.applicantId,
@@ -281,7 +324,6 @@ module.exports.createApplication = async function (req, res) {
     }
 
     let application = await Application.create({
-      // applicantemail: req.body.applicantemail,
       applicantid: req.body.applicantid,
       applicantname: req.body.applicantname,
       applicantemail: req.body.applicantemail,
@@ -300,7 +342,6 @@ module.exports.createApplication = async function (req, res) {
     return res.status(200).json({
       data: {
         application: application,
-        //token: jwt.sign(user.toJSON(), env.jwt_secret, { expiresIn: "100000" })
       },
       message: "Job Created!!",
       success: true,
@@ -314,6 +355,15 @@ module.exports.createApplication = async function (req, res) {
   }
 };
 
+/**
+ * Modifies an existing application by moving application into a grading
+ * status, allowing applicants to answer questions, corresponds to the
+ * API Route /modifyApplication
+ * @param {*} req respnse from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for succesfully updating
+ * the application or server errors
+ */
 module.exports.modifyApplication = async function (req, res) {
   try {
     let application = await Application.findById(req.body.applicationId);
@@ -349,6 +399,14 @@ module.exports.modifyApplication = async function (req, res) {
   }
 };
 
+/**
+ * Accepts an existing application by changing its status, corresponds
+ * to the API Route /acceptapplication
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for succesfully
+ * updating the application or server errors.
+ */
 module.exports.acceptApplication = async function (req, res) {
   try {
     let application = await Application.findById(req.body.applicationId);
@@ -361,11 +419,6 @@ module.exports.acceptApplication = async function (req, res) {
       message: "Application is updated Successfully",
 
       data: {
-        //user.JSON() part gets encrypted
-
-        // token: jwt.sign(user.toJSON(), env.jwt_secret, {
-        //   expiresIn: "100000",
-        // }),
         application,
       },
       success: true,
@@ -379,6 +432,14 @@ module.exports.acceptApplication = async function (req, res) {
   }
 };
 
+/**
+ * Rejects an existing application by changing its status, corresponds
+ * to the API Route /rejectapplication
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for succesfully
+ * updating the application or server errors.
+ */
 module.exports.rejectApplication = async function (req, res) {
   try {
     let application = await Application.findById(req.body.applicationId);
@@ -391,11 +452,6 @@ module.exports.rejectApplication = async function (req, res) {
       message: "Application is updated Successfully",
 
       data: {
-        //user.JSON() part gets encrypted
-
-        // token: jwt.sign(user.toJSON(), env.jwt_secret, {
-        //   expiresIn: "100000",
-        // }),
         application,
       },
       success: true,
@@ -409,6 +465,14 @@ module.exports.rejectApplication = async function (req, res) {
   }
 };
 
+/**
+ * Closes an existing job by changing its status, corresponds
+ * to the API Route /closejob
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for succesfully
+ * updating the job or server errors.
+ */
 module.exports.closeJob = async function (req, res) {
   try {
     let job = await Job.findById(req.body.jobid);
@@ -421,11 +485,6 @@ module.exports.closeJob = async function (req, res) {
       message: "Job is updated Successfully",
 
       data: {
-        //user.JSON() part gets encrypted
-
-        // token: jwt.sign(user.toJSON(), env.jwt_secret, {
-        //   expiresIn: "100000",
-        // }),
         job,
       },
       success: true,
@@ -449,7 +508,14 @@ function getTransport() {
   });
 }
 
-// Generate OTP ans send email to user
+/**
+ * Generates an OTP and sends an email to the user, corresponds
+ * to the API route /generateOTP
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for succesfully
+ * generating an OTP or server errors
+ */
 module.exports.generateOtp = async function (req, res) {
   const otp = Math.floor(100000 + Math.random() * 900000);
   try {
@@ -483,6 +549,14 @@ module.exports.generateOtp = async function (req, res) {
   }
 };
 
+/**
+ * Verifies the OTP that the user entered, corresponds to the
+ * API route /verifyOTP
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns JSON object with a status message for succesfully
+ * verification, an incorrect OTP, or server errors
+ */
 module.exports.verifyOtp = async function (req, res) {
   try {
     const authOtp = await AuthOtp.findOne({
