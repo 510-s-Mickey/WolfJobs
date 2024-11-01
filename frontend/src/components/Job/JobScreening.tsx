@@ -1,11 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useApplicationStore } from "../../store/ApplicationStore";
 import { Button } from "@mui/material";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useSearchParams } from "react-router-dom";
 
-const JobScreening = ({ jobData }: { jobData: Job }) => {
+const JobScreening = (props: any) => {
+  const { jobData }: { jobData: Job } = props;
+  const [searchParams] = useSearchParams();
+
   const [displayList, setDisplayList] = useState<Application[]>([]);
+
   const applicationList = useApplicationStore((state) => state.applicationList);
 
   useEffect(() => {
@@ -15,46 +20,44 @@ const JobScreening = ({ jobData }: { jobData: Job }) => {
         (item) => item.jobid === jobData._id && item.status === "applied"
       )
     );
-  }, [applicationList, jobData._id]);
+  }, [searchParams]);
 
-  const handleStatusChange = useCallback(
-    async (applicationId: string, status: string) => {
-      let url = "http://localhost:8000/api/v1/users/";
+  const handleAccept = (applicationId: string) => {
+    const url = "http://localhost:8000/api/v1/users/modifyApplication";
 
-      if (status === "screening") {
-        url += "acceptapplication";
-      } else if (status === "rejected") {
-        url += "rejectapplication";
-      } else {
-        console.error("Invalid status");
+    const body = {
+      applicationId: applicationId,
+      status: "screening",
+    };
+
+    axios.post(url, body).then((res) => {
+      if (res.status == 200) {
+        toast.success("Accepted candidate");
+        location.reload();
+
         return;
       }
+      toast.error("Failed to accept candidate");
+    });
+  };
+  const handleReject = (applicationId: string) => {
+    const url = "http://localhost:8000/api/v1/users/modifyApplication";
 
-      const body = {
-        applicationId: applicationId,
-      };
+    const body = {
+      applicationId: applicationId,
+      status: "rejected",
+    };
 
-      try {
-        const response = await axios.post(url, body);
-        if (response.status === 200) {
-          toast.success(
-            `${status === "screening" ? "Accepted" : "Rejected"} candidate`
-          );
-          setDisplayList((prevList) =>
-            prevList.filter((item) => item._id !== applicationId)
-          );
-        } else {
-          throw new Error("Failed to update status");
-        }
-      } catch (error) {
-        console.error("Error updating application status:", error);
-        toast.error(
-          `Failed to ${status === "screening" ? "accept" : "reject"} candidate`
-        );
+    axios.post(url, body).then((res) => {
+      if (res.status == 200) {
+        toast.success("Rejected candidate");
+        location.reload();
+
+        return;
       }
-    },
-    []
-  );
+      toast.error("Failed to reject candidate");
+    });
+  };
 
   const handleViewResume = useCallback(async (applicantId: string) => {
     try {
@@ -91,7 +94,7 @@ const JobScreening = ({ jobData }: { jobData: Job }) => {
                   <div>Skills: {item.applicantSkills}</div>
                 )}
                 <div className="flex justify-center px-2 py-1 ml-2 border border-gray-300 rounded-md">
-                  <a
+                <a
                     href="#"
                     className="text-red-500"
                     onClick={(e) => {
@@ -105,16 +108,18 @@ const JobScreening = ({ jobData }: { jobData: Job }) => {
               </div>
               <div className="flex flex-row">
                 <Button
-                  onClick={() => {
-                    return handleStatusChange(item._id, "screening");
+                  onClick={(e) => {
+                    e.preventDefault();
+                    return handleAccept(item._id);
                   }}
                   style={{ color: "#FF5353" }}
                 >
                   Accept
                 </Button>
                 <Button
-                  onClick={() => {
-                    return handleStatusChange(item._id, "rejected");
+                  onClick={(e) => {
+                    e.preventDefault();
+                    return handleReject(item._id);
                   }}
                   style={{ color: "#FF5353" }}
                 >
