@@ -75,7 +75,7 @@ If you have ideas, questions, or comments, please let us know in the [discussion
     - They are documented and described [here](https://github.com/SE-Fall-2024/WolfJobs/blob/master/GitHubActions.md).
 - Containerization of Entire Application! This provides a seamless process to build the application.
 - Minor changes to UI to match [style guide](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs).
-- Implemented Prettier formating and EsLinting for style consistancy and static analysis
+- Implemented Prettier formatting and EsLinting for style consistency and static analysis
 - Used In-Memory MongoDB databases to create a new MongoDB database in memory when testing the backend every time
 - Fixed backend tests to no longer timeout and implemented a test suite of backend tests using ^
 - Updated and fixed resume uploading/viewing capabilities
@@ -85,7 +85,7 @@ If you have ideas, questions, or comments, please let us know in the [discussion
 ![Diagram](https://github.com/SE-Fall-2024/WolfJobs/blob/8419fbad97401bcd7af3ad86e54d106febea0751/resources/Arch%20Diagram.png)
 
 NOTE: Note about routes/v1/index.js step
-From the backend/index.js file, it points to the /routers folder which contains an index.js file which points to another index.js which checks a user.js file for API endpoints, and then checks the final routes/api/v1/index.js and routes/api/v1/user.js. The different index.js files point to each other while checking the same level user.js files for API endpoints until it hits the routes/v1/user.js which contains the majority of the API endpoints. It took us awhile to figure this out and we wanted to document how it worked.
+From the backend/index.js file, it points to the /routers folder which contains an index.js file that points to another index.js which checks a user.js file for API endpoints, and then checks the final routes/api/v1/index.js and routes/api/v1/user.js. The different index.js files point to each other while checking the same level user.js files for API endpoints until it hits the routes/v1/user.js which contains the majority of the API endpoints. It took us a while to figure this out and we wanted to document how it worked.
 
 
 # Presentation Video
@@ -191,7 +191,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ## NOTE
 - Before running any of the additional commands, you must first run the command `npm i` in the WolfJobs directory, the WolfJobs/backend directory
-  and the WolfJobs/frontend directory to ensure that the local dependencies for testing, linting and the application will be installed.
+  and the WolfJobs/frontend directory to ensure that the local dependencies for testing, lining, and the application will be installed.
 
 #### `docker compose down`
 - Removes Docker containers
@@ -206,7 +206,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 - runs the Prettier code formatter tool on the backend code
 
 #### `npm run style:front`
-- runs the Prettier code formatter tool on the backend code
+- runs the Prettier code formatter tool on the frontend code
 
 ### Frontend Directory 
 Accessible by `cd frontend` from the parent directory: WolfJobs.
@@ -228,21 +228,21 @@ Accessible by `cd backend` from the parent directory: Wolfjobs.
 
 # Future Improvements
 
-**1. Email Service** - On getting selected/rejected to a job, the applicant should be getting an email about it.
+**1. Email Service** - On getting selected/rejected for a job, the applicant should be getting an email about it.
 
 **2. Interview Video Submission** - Managers can request applicants to submit a video screening file and applicants can upload a video on their side of the portal.
 
-**3. Job Analysis** – WolfJobs will provide the functionality of analysing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salary to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
+**3. Job Analysis** – WolfJobs will provide the functionality of analyzing various aspects of a job. Job Analysis based on various parameters using graphical representation will help in making prediction on which jobs are more preferred and for which jobs applicants have more inclination. Hiring managers can then decide what rewards and salaries to be given to the applicants of that job. Even applicants will get to know, which job is being preferred among other applicants.
 
-**4. Interview Appointment Scheduling** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using google calendar appointments can be organised.
+**4. Interview Appointment Scheduling** – WolfJobs will also provide the facility for the hiring manager to organize an interview appointment for the job based on the applicant’s availability and convenient time uploaded by the hiring manager. Either of the users can upload their availability time in the G-sheet and using Google Calendar appointments can be organised.
 
-**5. Candidate Matching Percentage** – WolfJobs applicant skill matching feature will include a percentage to how fit a candidate's skills are based on the job's required skills. Applicants will see a match percentage indicating how likely they are to get accepted and recieve an interview. 
+**5. Candidate Matching Percentage** – WolfJobs applicant skill matching feature will include a percentage of how fit a candidate's skills are based on the job's required skills. Applicants will see a match percentage indicating how likely they are to get accepted and receive an interview. 
 
 **6. Matching based on Resume** – WolfJobs applicants will be able to parse their resume and WolfJobs will extract key skills from the resume and compare it with required job skills to give candidates job matching status.
 
 **7. Database Security and Hashing** – WolfJobs currently does not securely store the password and user information in the database. This data needs to be protected and hashed to ensure security.
 
-**8. Refactoring of Backend** - Reference the note attached to architecture diagram. There are multiple index.js files that reference eachother and should be consolidated. In addition, error codes and messages within the API should be updated to be more specific to the error. Currently they are all set to 500, "Internal Server Error".
+**8. Refactoring of Backend** - Reference the note attached to the architecture diagram. There are multiple index.js files that reference each other and should be consolidated. In addition, error codes and messages within the API should be updated to be more specific to the error. Currently, they are all set to 500, "Internal Server Error".
 
 **9. Incorporate Shibboleth Login (NCSU login)** - Allow the option to login via Shibboleth to increase verification of NC State users.
 
