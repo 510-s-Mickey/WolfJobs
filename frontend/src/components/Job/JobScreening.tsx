@@ -94,7 +94,7 @@ const JobScreening = (props: any) => {
                   <div>Skills: {item.applicantSkills}</div>
                 )}
                 <div className="flex justify-center px-2 py-1 ml-2 border border-gray-300 rounded-md">
-                <a
+                  <a
                     href="#"
                     className="text-red-500"
                     onClick={(e) => {
