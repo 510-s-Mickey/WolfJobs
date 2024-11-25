@@ -39,6 +39,11 @@ const RegistrationPage = () => {
   const { register, handleSubmit, formState, watch } = form;
   const { errors } = formState;
 
+  const validatePasswordStrength = (password: string) => {
+    const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    return strongPasswordRegex.test(password) || "Password must be at least 8 characters long and include uppercase, lowercase, and a number.";
+  };
+
   const onSubmit = (data: FormValues) => {
     console.log("form submitted");
     console.log(data);
@@ -107,6 +112,7 @@ const RegistrationPage = () => {
                 type="password"
                 {...register("password", {
                   required: "Password is required",
+                  validate: validatePasswordStrength,
                 })}
                 error={!!errors.password}
                 helperText={errors.password?.message}
