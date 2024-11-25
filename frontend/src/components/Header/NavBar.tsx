@@ -46,6 +46,7 @@ const NavBar = () => {
                 text={`Notifications (${notificationCount})`}
               />
             )}
+            {isLoggedIn && <NavBarItem link="/schedule" text="Interview Schedule" />}
             {isLoggedIn && <NavBarItem link="/logout" text="Log Out" />}
           </ul>
         </nav>
