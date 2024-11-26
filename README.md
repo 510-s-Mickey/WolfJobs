@@ -23,7 +23,7 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 #### Code Coverage
 **Frontend Coverage:**
-[![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)\
+[![codecov](https://codecov.io/gh/510-s-Mickey/WolfJobs/branch/main/graph/badge.svg)](https://codecov.io/gh/510-s-Mickey/WolfJobs)\
 **Backend Coverage:**
 ![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$)
 
