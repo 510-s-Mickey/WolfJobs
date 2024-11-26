@@ -2,9 +2,9 @@ name: tests-coverage
 
 on:
   push:
-    branches: ["master"]
+    branches: -'**'
   pull_request:
-    branches: ["master"]
+    branches: -'**'
   schedule:
     - cron: "0 3 * * *" # Daily at 3 AM
 
