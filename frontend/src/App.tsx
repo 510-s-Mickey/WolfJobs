@@ -18,6 +18,7 @@ import JobPreview from "./Pages/CreateJob/jobPreview";
 import Resume from "./Pages/Resume/Resume";
 import ResumeViewer from "./components/Resume/ResumeViewer";
 import Notifications from "./Pages/Notifications/Notifications";
+import InterviewSchedule from "./Pages/InterviewSchedule/InterviewSchedule";
 
 const App = () => {
   return (
@@ -93,6 +94,14 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/schedule"
+            element={
+              <ProtectedRoute>
+                <InterviewSchedule />
               </ProtectedRoute>
             }
           />
