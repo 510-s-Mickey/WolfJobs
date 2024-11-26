@@ -4,7 +4,8 @@
     "lint:back": "npx eslint \"backend/**/*.{js,jsx,ts,tsx}\" --fix  ",
     "lint:front": "npx eslint \"frontend/**/*.{js,jsx,ts,tsx}\" --fix  ",
     "style:back": "npx prettier --write \"backend/**/*.{js,tsx}\" ",
-    "style:front": "npx prettier --write \"frontend/**/*.{js,tsx}\" "
+    "style:front": "npx prettier --write \"frontend/**/*.{js,tsx}\" ",
+    "test": "jest"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
