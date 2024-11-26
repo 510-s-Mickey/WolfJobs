@@ -1,5 +1,5 @@
 .DS_STORE
 node_modules
 .DS_Store
-# Ignore Google API credentials file
-backend/config/credentials.json
+.env
+test_email.js

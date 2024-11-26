@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Stack, TextField, Button } from "@mui/material";
+import React, { useState } from 'react';
 // import { DevTool } from "@hookform/devtools";
 
 type FormValues = {
@@ -29,6 +30,14 @@ const LoginPage = () => {
   // const { control } = form;
   const { register, handleSubmit, formState } = form;
   const { errors } = formState;
+
+  // State to toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const onSubmit = (data: FormValues) => {
     console.log("form submitted");
@@ -68,7 +77,7 @@ const LoginPage = () => {
               />
               <TextField
                 label="Password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 {...register("password", {
                   required: "Password is required",
                 })}
@@ -85,6 +94,18 @@ const LoginPage = () => {
                   },
                 }}
               />
+              <Button 
+                onClick={togglePasswordVisibility}
+                style={{
+                  borderRadius: "10px",
+                  textTransform: "none",
+                  right: '1px',
+                  bottom: '1px',
+                  fontSize: "10px",
+                }}
+              >
+                {showPassword ? 'HIDE' : 'SHOW'}
+              </Button>
               <Button
                 type="submit"
                 variant="contained"
