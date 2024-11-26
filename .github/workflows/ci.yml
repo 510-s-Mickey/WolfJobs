@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - '**'  # Triggers on push to any branch
+      - '**'
   pull_request:
     branches:
-      - '**'  # Triggers on pull request to any branch
+      - '**'
 
 jobs:
   test:
@@ -18,10 +18,10 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 'lts/*'  # Use the latest LTS version of Node.js
+        node-version: 'lts/*'
 
     - name: Install dependencies
-      run: npm ci  # Use npm ci for a clean install based on package-lock.json
+      run: npm ci
 
     - name: Run tests
       run: npm test
