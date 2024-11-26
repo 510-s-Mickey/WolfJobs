@@ -197,9 +197,9 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
  **Step 4: Set up Email Service**
 - Create a .env file on the root folder of this project.
-- Enter the following into .env: `EMAIL_USER= You create an email address for sending E-mail. (Put your email address here)
+- Enter the following into .env:
+-  `EMAIL_USER= You create an email address for sending E-mail. (Put your email address here)
 EMAIL_PASS=Email app password(google how to set up app password for your gmail)`
-  - The first build can take a while, so be patient!
 
 **Step 5: Open [http://localhost:5173](http://localhost:5173) to view it in the browser.**
 
