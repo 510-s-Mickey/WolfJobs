@@ -172,7 +172,8 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 ![image](https://github.com/user-attachments/assets/07a3abc0-49ca-4ceb-a6a7-5617b3aec595)
 
 ### Receive Notification When Posting A Job
-![image](https://github.com/user-attachments/assets/d272d326-c5ff-4111-9c2a-5a26e33a853d)
+![image](https://github.com/user-attachments/assets/bea5338b-af58-472e-a942-65309de492ac)
+
 
 
 # Installation Instructions for Project Setup
