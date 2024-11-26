@@ -138,6 +138,7 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 ![image](https://github.com/user-attachments/assets/689823c1-c2b3-4f61-9de8-6cbc0d418612)
 
 
+
 ## Manager Side
 
 ### Manager Sign Up
@@ -173,6 +174,18 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ### Receive Notification When Posting A Job
 ![image](https://github.com/user-attachments/assets/bea5338b-af58-472e-a942-65309de492ac)
+
+
+
+### Password Strength Requirements
+![strength](resources/password_strength.png)
+
+### Password Hide/Show Setting
+![strength](resources/password_hide_show.png)
+
+
+### Video Upload
+![strength](resources/video.png)
 
 
 
