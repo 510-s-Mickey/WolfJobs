@@ -2,11 +2,11 @@ name: tests-coverage
 
 on:
   push:
-    branches: ["2-integrate-google-calendar"]
+    branches: ["master"]
   pull_request:
-    branches: ["2-integrate-google-calendar"]
-  # schedule:
-  #   - cron: "0 3 * * *" # Daily at 3 AM
+    branches: ["master"]
+  schedule:
+    - cron: "0 3 * * *" # Daily at 3 AM
 
 jobs:
   build:
