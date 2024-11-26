@@ -10,6 +10,7 @@ const Resume: React.FC = () => {
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [videoUrl, setVideoUrl] = useState<string>("");
+  const [uploadedVideoUrl, setUploadedVideoUrl] = useState<string>("");
 
   const resumeName = useUserStore((state) => state.resume);
   const userId = useUserStore((state) => state.id);
@@ -80,6 +81,10 @@ const Resume: React.FC = () => {
         if (response.status === 201) {
           console.log("Video URL uploaded successfully");
           toast.success("Video URL Uploaded Successfully!");
+
+          // save the uploaded video url
+          setUploadedVideoUrl(videoUrl); // save the uploaded video url
+          setVideoUrl(""); // clear the input field
         }
       } catch (error) {
         console.error("Error uploading the video URL", error);
@@ -115,7 +120,7 @@ const Resume: React.FC = () => {
             {isUploading ? `Uploading... ${uploadProgress}%` : "Upload Resume!"}
           </Button>
 
-          <div className="mt-4">
+          <div className="mt-4 flex items-center space-x-4">
             <input
               type="text"
               placeholder="Enter video URL"
@@ -138,6 +143,21 @@ const Resume: React.FC = () => {
             >
               Upload Video URL
             </Button>
+            
+            {uploadedVideoUrl && (
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={() => window.open(uploadedVideoUrl, "_blank")}
+                style={{
+                  textTransform: "none",
+                  fontSize: "16px",
+                  marginLeft: "10px",
+                }}
+              >
+                Current Video
+              </Button>
+            )}
           </div>
 
           {file && !isUploading && (

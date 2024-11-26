@@ -110,6 +110,11 @@ exports.uploadVideoUrl = async (req, res) => {
       return res.status(404).send({ error: "User not found" });
     }
 
+    if (user.videoUrl) {
+      console.log(`Existing video URL found: ${user.videoUrl}`);
+      user.videoUrl = null; 
+    }
+
     user.videoUrl = videoUrl;
     await user.save();
 
