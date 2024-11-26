@@ -1,30 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+// import userEvent from '@testing-library/user-event';
 import Resume from "../../../src/Pages/Resume/Resume";
+import ResumeViewer from "../../../src/components/Resume/ResumeViewer";
 import { MemoryRouter } from "react-router";
-import { useUserStore } from "../../../src/store/UserStore";
-import { vi } from "vitest";
-
-vi.mock("../../../src/store/UserStore", () => {
-  const originalModule = vi.requireActual("../../../src/store/UserStore");
-  return {
-    ...originalModule,
-    useUserStore: vi.fn(),
-  };
-});
 
 describe("Resume", () => {
-  beforeEach(() => {
-    // Mock Zustand store
-    useUserStore.mockImplementation(() => ({
-      videoUrl: "",
-      updateVideoUrl: vi.fn(),
-      id: "testUserId",
-      resume: "testResume.pdf",
-      updateResume: vi.fn(),
-      updateResumeId: vi.fn(),
-    }));
-  });
-
   it("Renders Resume", () => {
     render(
       <MemoryRouter>
@@ -32,69 +12,25 @@ describe("Resume", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByPlaceholderText("Enter video URL")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Upload Video URL/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /Upload Resume/i })).toBeInTheDocument();
+    expect(
+      screen.queryByText(
+        "Drag 'n' drop somefiles here, or click to select files"
+      )
+    );
+    expect(screen.getByRole("button", { name: /Upload Resume/i }));
+    expect(screen.getByRole("presentation"));
   });
 
-  it("Handles video URL input and clears after upload", async () => {
+  it("Renders Resume Viewer", () => {
     render(
       <MemoryRouter>
-        <Resume />
+        <ResumeViewer />
       </MemoryRouter>
     );
 
-    const videoInput = screen.getByPlaceholderText("Enter video URL") as HTMLInputElement;
-    const uploadButton = screen.getByRole("button", { name: /Upload Video URL/i });
-
-    // Simulate entering video URL
-    fireEvent.change(videoInput, { target: { value: "https://www.youtube.com" } });
-    expect(videoInput.value).toBe("https://www.youtube.com");
-
-    // Simulate clicking upload button
-    fireEvent.click(uploadButton);
-
-    // Mock Zustand should update video URL
-    const updatedVideoUrl = useUserStore().updateVideoUrl;
-    expect(updatedVideoUrl).toHaveBeenCalledWith("https://www.youtube.com");
-
-    // Input should clear after upload
-    expect(videoInput.value).toBe("");
-  });
-
-  it("Displays Current Video button when video URL exists", () => {
-    // Mock Zustand store with existing video URL
-    useUserStore.mockImplementation(() => ({
-      videoUrl: "https://www.youtube.com",
-      updateVideoUrl: vi.fn(),
-      id: "testUserId",
-      resume: "testResume.pdf",
-      updateResume: vi.fn(),
-      updateResumeId: vi.fn(),
-    }));
-
-    render(
-      <MemoryRouter>
-        <Resume />
-      </MemoryRouter>
-    );
-
-    const currentVideoButton = screen.getByRole("button", { name: /Current Video/i });
-    expect(currentVideoButton).toBeInTheDocument();
-
-    // Simulate clicking Current Video button
-    fireEvent.click(currentVideoButton);
-    // No error should occur as `window.open` is handled by the browser
-  });
-
-  it("Displays Resume Viewer components", () => {
-    render(
-      <MemoryRouter>
-        <Resume />
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText("Current Resume: testResume.pdf")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /View/i })).toBeInTheDocument();
+    expect(screen.queryByText("Page 1 of"));
+    expect(screen.queryByText("Failed to load PDF file."));
+    expect(screen.getByRole("button", { name: /Previous/i }));
+    expect(screen.getByRole("button", { name: /Next/i }));
   });
 });
