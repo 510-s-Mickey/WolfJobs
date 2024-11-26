@@ -67,7 +67,7 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 # Support!
 
-If you have ideas, questions, or comments, please let us know in the [discussions](https://github.com/SE-Fall-2024/WolfJobs/discussions) tab!
+If you have ideas, questions, or comments, please let us know in the [discussions]([https://github.com/SE-Fall-2024/WolfJobs/discussions](https://github.com/510-s-Mickey/WolfJobs/discussions/13)) tab!
 
 # What's New
 
