@@ -278,3 +278,12 @@ Currently not funded.
     <td align="center"><a href="https://github.com/satwikakancharla"><img src="https://avatars.githubusercontent.com/satwikakancharla" width="100px;" alt=""><br><b>Satwika Kancharla</b></a></td>
   </tr>
 </table>
+
+## Iteration 4:
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/HuiSunNCSU"><img src="https://avatars.githubusercontent.com/HuiSunNCSU" width="100px;" alt=""><br><b>Hui Sun</b></a></td>
+    <td align="center"><br><a href="https://github.com/chris-hzc"><img src="https://avatars.githubusercontent.com/chris-hzc" width="100px;" alt=""><br><b>Zhichao Hou</b></a><br><a href="https://github.com/hannahe6"><b>(second account)</b></a></td>
+    <td align="center"><a href="https://github.com/LUfansx"><img src="https://avatars.githubusercontent.com/LUfansx" width="100px;" alt=""><br><b>Tingxiang Ji</b></a></td>
+  </tr>
+</table>
