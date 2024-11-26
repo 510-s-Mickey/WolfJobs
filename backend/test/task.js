@@ -7,7 +7,7 @@ const expect = chai.expect;
 chai.should();
 
 chai.use(chaiHttp);
-const { sendMail } = require("../../utils/email_service");
+const { sendMail } = require("../utils/email_service");
 describe("Backend API", () => {
   describe("GET /api/v1/users/fetchapplications", () => {
     it("Returns all applications (manager)", (done) => {

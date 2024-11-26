@@ -23,7 +23,7 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 
 #### Code Coverage
 **Frontend Coverage:**
-[![codecov](https://codecov.io/gh/510-s-Mickey/WolfJobs/branch/main/graph/badge.svg)](https://codecov.io/gh/510-s-Mickey/WolfJobs)\
+[![codecov](https://codecov.io/github/SE-Fall-2024/WolfJobs/graph/badge.svg?token=ZIAN9cdn9q)](https://codecov.io/github/SE-Fall-2024/WolfJobs)\
 **Backend Coverage:**
 ![](https://img.shields.io/badge/Coverage-47%25-F2E96B.svg?label=Backend-Coverage&prefix=$statements$)
 
@@ -95,6 +95,8 @@ From the backend/index.js file, it points to the /routers folder which contains 
 Eager to dive into a side hustle or seize a full-time job opportunity? Look no further than WolfJobs. Our platform is the ultimate connector between recruiters in need of talent for both short-term and full-time roles and candidates seeking the freedom to choose. Dive in, earn your share, and opt out whenever you want – or stay on for a longer journey!
 
 At the heart of our bustling campus, WolfJobs stands out as the top student employment portal. Whether you're on the hunt for a short-term tech project, a part-time shift at a campus dining hall, or a full-time position that offers stability and growth, WolfJobs has a spot just for you.
+
+[Demo Video](https://youtu.be/_9WBt_3El-U)
 
 # Why WolfJobs?
 
