@@ -223,9 +223,15 @@ module.exports.searchUser = async function (req, res) {
  * creation or for errors in the process
  */
 module.exports.createJob = async function (req, res) {
-  let user = await User.findOne({ _id: req.body.id });
-  check = req.body.skills;
   try {
+    let user = await User.findOne({ _id: req.body.id });
+
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
     let job = await Job.create({
       name: req.body.name,
       managerid: user._id,
@@ -240,6 +246,28 @@ module.exports.createJob = async function (req, res) {
       question3: req.body.question3,
       question4: req.body.question4,
     });
+
+    // 使用 sendMail 给用户发送邮件
+    sendMail(
+        user.email, // 用户的邮箱地址
+        "Job Created Successfully",
+        `Hi ${user.name},
+        Your job "${job.name}" has been successfully created
+        Here are the details of the job:
+        - **Location:** ${job.location}
+        - **Description:** ${job.description}
+        - **Pay:** ${job.pay}
+       
+    Best regards,
+    Job Portal Team`
+    )
+        .then(() => {
+          console.log("[DEBUG] Email sent successfully to user:", user.email);
+        })
+        .catch((emailError) => {
+          console.error("[DEBUG] Failed to send email to user:", emailError);
+        });
+
     res.set("Access-Control-Allow-Origin", "*");
     return res.status(200).json({
       data: {
@@ -256,6 +284,7 @@ module.exports.createJob = async function (req, res) {
     });
   }
 };
+
 
 /**
  * Gets the list of jobs for the user, corresponds to the API Route
