@@ -34,6 +34,9 @@ router.post(
 // upload video url
 router.post("/uploadVideoUrl", resumeController.uploadVideoUrl);
 
+// get video url
+router.get("/getVideoUrl/:id", resumeController.getVideoUrl);
+
 router.get("/applicantresume/:id", resumeController.getResume);
 
 router.get("/sign-out", usersController.destroySession);

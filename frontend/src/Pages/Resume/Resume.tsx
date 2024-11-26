@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ResumeDropzone from "../../components/Resume/ResumeDropzone";
 import { useUserStore } from "../../store/UserStore";
@@ -9,13 +9,34 @@ const Resume: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [isUploading, setIsUploading] = useState<boolean>(false);
-  const [videoUrl, setVideoUrl] = useState<string>("");
-  const [uploadedVideoUrl, setUploadedVideoUrl] = useState<string>("");
+  const [temporaryVideoUrl, setTemporaryVideoUrl] = useState<string>("");
 
   const resumeName = useUserStore((state) => state.resume);
+  const videoUrl = useUserStore((state) => state.videoUrl);
+  const updateVideoUrl = useUserStore((state) => state.updateVideoUrl);
   const userId = useUserStore((state) => state.id);
   const updateResume = useUserStore((state) => state.updateResume);
   const updateResumeId = useUserStore((state) => state.updateResumeId);
+
+  // Fetch video URL on component load
+  useEffect(() => {
+    const fetchVideoUrl = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/users/getVideoUrl/${userId}`
+        );
+        if (response.status === 200 && response.data.videoUrl) {
+          updateVideoUrl(response.data.videoUrl); // Update Zustand store
+        }
+      } catch (error) {
+        console.error("Error fetching video URL:", error);
+      }
+    };
+
+    if (userId) {
+      fetchVideoUrl();
+    }
+  }, [userId, updateVideoUrl]);
 
   const handleSubmit = async () => {
     if (file) {
@@ -61,18 +82,18 @@ const Resume: React.FC = () => {
 
   const handleVideoUrlSubmit = async () => {
     console.log("Sending userId:", userId); // print userId
-    console.log("Sending videoUrl:", videoUrl); // print videoUrl
+    console.log("Sending videoUrl:", temporaryVideoUrl); // print videoUrl
 
-    if (!videoUrl || !userId) {
+    if (!temporaryVideoUrl || !userId) {
       console.error("Missing videoUrl or userId");
       return;
     }
 
-    if (videoUrl) {
+    if (temporaryVideoUrl) {
       try {
         const response = await axios.post(
           "http://localhost:8000/users/uploadVideoUrl",
-          { videoUrl, userId },
+          { videoUrl: temporaryVideoUrl, userId },
           {
             headers: { "Content-Type": "application/json" },
           }
@@ -83,8 +104,8 @@ const Resume: React.FC = () => {
           toast.success("Video URL Uploaded Successfully!");
 
           // save the uploaded video url
-          setUploadedVideoUrl(videoUrl); // save the uploaded video url
-          setVideoUrl(""); // clear the input field
+          updateVideoUrl(temporaryVideoUrl);
+          setTemporaryVideoUrl(""); // clear the input field
         }
       } catch (error) {
         console.error("Error uploading the video URL", error);
@@ -124,15 +145,15 @@ const Resume: React.FC = () => {
             <input
               type="text"
               placeholder="Enter video URL"
-              value={videoUrl}
-              onChange={(e) => setVideoUrl(e.target.value)}
+              value={temporaryVideoUrl}
+              onChange={(e) => setTemporaryVideoUrl(e.target.value)}
               className="w-full px-3 py-2 border rounded"
             />
             <Button
               variant="contained"
               color="primary"
               onClick={handleVideoUrlSubmit}
-              disabled={!videoUrl}
+              disabled={!temporaryVideoUrl}
               style={{
                 background: "#FF5353",
                 borderRadius: "10px",
@@ -143,12 +164,18 @@ const Resume: React.FC = () => {
             >
               Upload Video URL
             </Button>
-            
-            {uploadedVideoUrl && (
+
+            {videoUrl && (
               <Button
                 variant="outlined"
                 color="primary"
-                onClick={() => window.open(uploadedVideoUrl, "_blank")}
+                onClick={() => {
+                  if (videoUrl) {
+                    window.open(videoUrl, "_blank");
+                  } else {
+                    toast.error("No video URL found");
+                  }
+                }}
                 style={{
                   textTransform: "none",
                   fontSize: "16px",
