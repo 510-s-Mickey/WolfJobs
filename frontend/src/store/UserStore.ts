@@ -18,6 +18,7 @@ type UserState = {
   affiliation: string;
   resume: string;
   resumeId: string;
+  videoUrl: string;
 };
 
 type UserAction = {
@@ -37,6 +38,7 @@ type UserAction = {
   updateAffiliation: (name: UserState["affiliation"]) => void;
   updateResume: (name: UserState["resume"]) => void;
   updateResumeId: (name: UserState["resumeId"]) => void;
+  updateVideoUrl: (name: UserState["videoUrl"]) => void;
 };
 
 export const useUserStore = create<UserState & UserAction>()((set) => ({
@@ -56,7 +58,7 @@ export const useUserStore = create<UserState & UserAction>()((set) => ({
   isLoggedIn: false,
   resume: "",
   resumeId: "",
-
+  videoUrl: "",
   updateName: (name: string) => {
     set(() => ({ name: name }));
   },
@@ -104,5 +106,8 @@ export const useUserStore = create<UserState & UserAction>()((set) => ({
   },
   updateResumeId: (resumeId: string) => {
     set(() => ({ resumeId: resumeId }));
+  },
+  updateVideoUrl: (videoUrl: string) => {
+    set(() => ({ videoUrl: videoUrl }));
   },
 }));

@@ -69,6 +69,10 @@ const userSchema = new mongoose.Schema(
       required: false,
       ref: "Resume",
     },
+    videoUrl: {
+      type: String,
+      default: "",
+    },
   },
   {
     timestamps: true,

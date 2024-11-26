@@ -3,11 +3,15 @@ const jwt = require("jsonwebtoken");
 const Job = require("../../../models/job");
 const Application = require("../../../models/application");
 const AuthOtp = require("../../../models/authOtp");
+const { sendMail } = require("../../../utils/email_service");
 
 const nodemailer = require("nodemailer");
 
 require("dotenv").config();
-
+/*(async () => {
+  const success = await sendMail("huisun.uf@gmail.com", "Test Subject", "This is a test email.");
+  console.log("Email sent successfully:", success);
+})();*/
 /**
  * Creates a new session for users, corresponds to the API route
  * POST /create-session
@@ -54,67 +58,60 @@ module.exports.signUp = async function (req, res) {
   try {
     if (req.body.password != req.body.confirm_password) {
       return res.status(422).json({
-        message: "Passwords donot match",
+        message: "Passwords do not match",
       });
     }
 
-    User.findOne({ email: req.body.email }, function (err, user) {
-      if (user) {
-        res.set("Access-Control-Allow-Origin", "*");
-        return res.status(400).json({
-          message: "Sign Up Successful, here is your token, plz keep it safe",
 
-          data: {
-            //user.JSON() part gets encrypted
+    const existingUser = await User.findOne({ email: req.body.email });
 
-            token: jwt.sign(user.toJSON(), "wolfjobs", {
-              expiresIn: "100000",
-            }),
-            user,
-          },
-          success: true,
+    if (existingUser) {
+      res.set("Access-Control-Allow-Origin", "*");
+      return res.status(400).json({
+        message: "User already exists",
+        data: {
+          token: jwt.sign(existingUser.toJSON(), "wolfjobs", { expiresIn: "100000" }),
+          user: existingUser,
+        },
+        success: true,
+      });
+    }
+
+
+    const newUser = await User.create(req.body);
+
+
+    sendMail(
+        newUser.email,
+        "Welcome to Job Portal!",
+        "Thank you for signing up. Your account has been created successfully!"
+    )
+        .then(() => {
+          console.log("[DEBUG] Email sent successfully.");
+        })
+        .catch((emailError) => {
+          console.error("[DEBUG] Failed to send email:", emailError);
         });
-      }
 
-      if (!user) {
-        let user = User.create(req.body, function (err, user) {
-          if (err) {
-            console.log(err);
-            return res.status(500).json({
-              message: "Internal Server Error",
-            });
-          }
 
-          // let userr = User.findOne({ email: req.body.email });
-          res.set("Access-Control-Allow-Origin", "*");
-          return res.status(200).json({
-            message: "Sign Up Successful, here is your token, plz keep it safe",
-
-            data: {
-              //user.JSON() part gets encrypted
-
-              token: jwt.sign(user.toJSON(), "wolfjobs", {
-                expiresIn: "100000",
-              }),
-              user,
-            },
-            success: true,
-          });
-        });
-      } else {
-        return res.status(500).json({
-          message: "Internal Server Error",
-        });
-      }
+    res.set("Access-Control-Allow-Origin", "*");
+    return res.status(200).json({
+      message: "Sign Up Successful, here is your token, please keep it safe",
+      data: {
+        token: jwt.sign(newUser.toJSON(), "wolfjobs", { expiresIn: "100000" }),
+        user: newUser,
+      },
+      success: true,
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
 
     return res.status(500).json({
       message: "Internal Server Error",
     });
   }
 };
+
 
 /**
  * Gets the user profile, corresponds to the API Route
@@ -226,9 +223,15 @@ module.exports.searchUser = async function (req, res) {
  * creation or for errors in the process
  */
 module.exports.createJob = async function (req, res) {
-  let user = await User.findOne({ _id: req.body.id });
-  check = req.body.skills;
   try {
+    let user = await User.findOne({ _id: req.body.id });
+
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
     let job = await Job.create({
       name: req.body.name,
       managerid: user._id,
@@ -243,6 +246,28 @@ module.exports.createJob = async function (req, res) {
       question3: req.body.question3,
       question4: req.body.question4,
     });
+
+
+    sendMail(
+        user.email,
+        "Job Created Successfully",
+        `Hi ${user.name},
+        Your job "${job.name}" has been successfully created
+        Here are the details of the job:
+        - **Location:** ${job.location}
+        - **Description:** ${job.description}
+        - **Pay:** ${job.pay}
+       
+    Best regards,
+    Job Portal Team`
+    )
+        .then(() => {
+          console.log("[DEBUG] Email sent successfully to user:", user.email);
+        })
+        .catch((emailError) => {
+          console.error("[DEBUG] Failed to send email to user:", emailError);
+        });
+
     res.set("Access-Control-Allow-Origin", "*");
     return res.status(200).json({
       data: {
@@ -259,6 +284,7 @@ module.exports.createJob = async function (req, res) {
     });
   }
 };
+
 
 /**
  * Gets the list of jobs for the user, corresponds to the API Route
@@ -574,8 +600,8 @@ module.exports.verifyOtp = async function (req, res) {
     authOtp.remove();
 
     await User.updateOne(
-      { _id: req.body.userId },
-      { $set: { isVerified: true } }
+        { _id: req.body.userId },
+        { $set: { isVerified: true } }
     );
 
     res.set("Access-Control-Allow-Origin", "*");

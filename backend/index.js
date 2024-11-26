@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const app = express();
@@ -21,6 +22,9 @@ const passportLocal = require("./config/passport-local-strategy");
 const passportJWT = require("./config/passport-jwt-strategy");
 
 app.use(cors());
+
+// Enable parsing of JSON requests
+app.use(express.json()); 
 
 app.use(express.urlencoded());
 

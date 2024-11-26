@@ -13,6 +13,8 @@ services:
     # command: sh -c "until nc -z db 27017; do echo 'Waiting for MongoDB...'; sleep 2; done && npm start"
     environment:
       - MONGO_URL=mongodb://db:27017/mydatabase
+    env_file:
+      - .env
   frontend:
     build: 
       context: ./frontend
