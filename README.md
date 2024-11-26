@@ -79,7 +79,6 @@ If you have ideas, questions, or comments, please let us know in the [discussion
 - Minor changes to UI to match [style guide](https://www.figma.com/file/sqt0gh5H7bZEkryKZ9jFnK/WolfJobs).
 - Implemented Prettier formatting and EsLinting for style consistency and static analysis
 - Used In-Memory MongoDB databases to create a new MongoDB database in memory when testing the backend every time
-- Fixed backend tests to no longer timeout and implemented a test suite of backend tests using ^
 - Updated and fixed resume uploading/viewing capabilities
 
 
