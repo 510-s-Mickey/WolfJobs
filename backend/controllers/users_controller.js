@@ -103,3 +103,22 @@ module.exports.destroySession = function (req, res) {
 
   return res.redirect("/");
 };
+
+// module.exports.uploadVideoUrl = async (req, res) => {
+//   const { videoUrl, userId } = req.body;
+
+//   try {
+//     const user = await User.findById(userId);
+//     if (!user) {
+//       return res.status(404).json({ message: "User not found" });
+//     }
+
+//     user.videoUrl = videoUrl;
+//     await user.save();
+
+//     res.status(201).json({ message: "Video URL saved successfully" });
+//   } catch (error) {
+//     console.error("Error saving video URL", error);
+//     res.status(500).json({ message: "Internal server error" });
+//   }
+// };

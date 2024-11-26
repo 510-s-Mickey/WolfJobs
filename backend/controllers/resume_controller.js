@@ -83,6 +83,45 @@ exports.getResume = async (req, res) => {
   }
 };
 
+/**
+ * Handles uploading a video URL for a user, corresponds to the
+ * API Route, /uploadVideoUrl
+ * @param {*} req response from users
+ * @param {*} res status of request
+ * @returns status message for successfully uploading a video URL
+ * or if the user cannot be found
+ */
+exports.uploadVideoUrl = async (req, res) => {
+  const { videoUrl, userId } = req.body;
+  // 打印日志，检查接收到的数据
+  console.log("Received userId:", userId);
+  console.log("Received videoUrl:", videoUrl);
+
+  // 如果 userId 不存在
+  if (!userId || !videoUrl) {
+    return res.status(400).send({ error: "Video URL and User ID are required" });
+  }
+
+  try {
+    const user = await User.findOne({ _id: userId });
+
+    if (!user) {
+      console.log("User not found for userId:", userId);
+      return res.status(404).send({ error: "User not found" });
+    }
+
+    user.videoUrl = videoUrl;
+    await user.save();
+
+    console.log("Updated user with videoUrl:", user);
+
+    res.status(201).send({ message: "Video URL uploaded successfully" });
+  } catch (error) {
+    console.error("Error updating video URL:", error);
+    res.status(500).send({ error: "Internal server error" });
+  }
+};
+
 // Make sure to export the multer upload as well
 exports.upload = upload;
 

@@ -31,6 +31,9 @@ router.post(
   resumeController.uploadResume // The controller function to handle the resume upload
 );
 
+// upload video url
+router.post("/uploadVideoUrl", resumeController.uploadVideoUrl);
+
 router.get("/applicantresume/:id", resumeController.getResume);
 
 router.get("/sign-out", usersController.destroySession);

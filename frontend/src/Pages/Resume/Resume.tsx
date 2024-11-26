@@ -9,6 +9,7 @@ const Resume: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
   const [isUploading, setIsUploading] = useState<boolean>(false);
+  const [videoUrl, setVideoUrl] = useState<string>("");
 
   const resumeName = useUserStore((state) => state.resume);
   const userId = useUserStore((state) => state.id);
@@ -57,6 +58,36 @@ const Resume: React.FC = () => {
     }
   };
 
+  const handleVideoUrlSubmit = async () => {
+    console.log("Sending userId:", userId); // print userId
+    console.log("Sending videoUrl:", videoUrl); // print videoUrl
+
+    if (!videoUrl || !userId) {
+      console.error("Missing videoUrl or userId");
+      return;
+    }
+
+    if (videoUrl) {
+      try {
+        const response = await axios.post(
+          "http://localhost:8000/users/uploadVideoUrl",
+          { videoUrl, userId },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+
+        if (response.status === 201) {
+          console.log("Video URL uploaded successfully");
+          toast.success("Video URL Uploaded Successfully!");
+        }
+      } catch (error) {
+        console.error("Error uploading the video URL", error);
+        toast.error("Video URL could not be uploaded");
+      }
+    }
+  };
+
   const getFilePreviewUrl = () => {
     if (!file) return null;
     return URL.createObjectURL(file);
@@ -83,6 +114,31 @@ const Resume: React.FC = () => {
           >
             {isUploading ? `Uploading... ${uploadProgress}%` : "Upload Resume!"}
           </Button>
+
+          <div className="mt-4">
+            <input
+              type="text"
+              placeholder="Enter video URL"
+              value={videoUrl}
+              onChange={(e) => setVideoUrl(e.target.value)}
+              className="w-full px-3 py-2 border rounded"
+            />
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleVideoUrlSubmit}
+              disabled={!videoUrl}
+              style={{
+                background: "#FF5353",
+                borderRadius: "10px",
+                textTransform: "none",
+                fontSize: "16px",
+                marginTop: "10px",
+              }}
+            >
+              Upload Video URL
+            </Button>
+          </div>
 
           {file && !isUploading && (
             <div className="mt-4">
