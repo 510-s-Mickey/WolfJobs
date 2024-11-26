@@ -134,6 +134,10 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 
 ![Applicant View Resume](resources/Applicant-Resume.gif)
 
+### Sign Up with Email Notification
+![image](https://github.com/user-attachments/assets/689823c1-c2b3-4f61-9de8-6cbc0d418612)
+
+
 ## Manager Side
 
 ### Manager Sign Up
@@ -163,6 +167,13 @@ At WolfJobs, it’s not just about work – it's about joining a vibrant pack wh
 ### View Resume
 
 ![Manager Upload Resume](resources/Manager-Resume.gif)
+
+### Sign Up with Email Notification
+![image](https://github.com/user-attachments/assets/07a3abc0-49ca-4ceb-a6a7-5617b3aec595)
+
+### Receive Notification When Posting A Job
+![image](https://github.com/user-attachments/assets/d272d326-c5ff-4111-9c2a-5a26e33a853d)
+
 
 # Installation Instructions for Project Setup
 
