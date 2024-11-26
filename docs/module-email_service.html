@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: email_service</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: email_service</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Email service module for sending emails using Gmail and Nodemailer.Requires the following environment variables to be set:- `EMAIL_USER`: The email address to send emails from.- `EMAIL_PASS`: The password or app-specific password for the email address.</div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_email_service.js.html">utils/email_service.js</a>, <a href="utils_email_service.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="~transporter"><span class="type-signature">(inner, constant) </span>transporter<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Nodemailer transporter for sending emails via Gmail.The transporter is configured with Gmail service and authentication credentials.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_email_service.js.html">utils/email_service.js</a>, <a href="utils_email_service.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~sendMail"><span class="type-signature">(async, inner) </span>sendMail<span class="signature">(to, subject, text)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sends an email using the configured transporter.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>to</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The recipient's email address.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The subject of the email.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The plain text body of the email.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils_email_service.js.html">utils/email_service.js</a>, <a href="utils_email_service.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Resolves to `true` if the email is sent successfully, otherwise `false`.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;boolean></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const { sendMail } = require('./email_service');sendMail('recipient@example.com', 'Hello', 'This is a test email.')    .then(success => console.log('Email sent:', success))    .catch(err => console.error('Failed to send email:', err));</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-email_service.html">email_service</a></li></ul><h3>Global</h3><ul><li><a href="global.html#acceptApplication">acceptApplication</a></li><li><a href="global.html#applicationSchema">applicationSchema</a></li><li><a href="global.html#autoOtpSchema">autoOtpSchema</a></li><li><a href="global.html#closeJob">closeJob</a></li><li><a href="global.html#connectDB">connectDB</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#createApplication">createApplication</a></li><li><a href="global.html#createJob">createJob</a></li><li><a href="global.html#createSession">createSession</a></li><li><a href="global.html#destroySession">destroySession</a></li><li><a href="global.html#editProfile">editProfile</a></li><li><a href="global.html#fetchApplication">fetchApplication</a></li><li><a href="global.html#generateOtp">generateOtp</a></li><li><a href="global.html#getProfile">getProfile</a></li><li><a href="global.html#getResume">getResume</a></li><li><a href="global.html#getVideoUrl">getVideoUrl</a></li><li><a href="global.html#home">home</a></li><li><a href="global.html#index">index</a></li><li><a href="global.html#jobSchema">jobSchema</a></li><li><a href="global.html#modifyApplication">modifyApplication</a></li><li><a href="global.html#profile">profile</a></li><li><a href="global.html#rejectApplication">rejectApplication</a></li><li><a href="global.html#resumeSchema">resumeSchema</a></li><li><a href="global.html#searchUser">searchUser</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#uploadResume">uploadResume</a></li><li><a href="global.html#uploadVideoUrl">uploadVideoUrl</a></li><li><a href="global.html#userSchema">userSchema</a></li><li><a href="global.html#verifyOtp">verifyOtp</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Tue Nov 26 2024 16:57:08 GMT-0500 (Eastern Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
