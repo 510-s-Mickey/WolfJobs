@@ -62,7 +62,7 @@ module.exports.signUp = async function (req, res) {
       });
     }
 
-    // 检查用户是否已经存在
+
     const existingUser = await User.findOne({ email: req.body.email });
 
     if (existingUser) {
@@ -77,7 +77,7 @@ module.exports.signUp = async function (req, res) {
       });
     }
 
-    // 创建新用户
+
     const newUser = await User.create(req.body);
 
 
@@ -93,7 +93,7 @@ module.exports.signUp = async function (req, res) {
           console.error("[DEBUG] Failed to send email:", emailError);
         });
 
-    // 返回成功的响应
+
     res.set("Access-Control-Allow-Origin", "*");
     return res.status(200).json({
       message: "Sign Up Successful, here is your token, please keep it safe",
@@ -247,9 +247,9 @@ module.exports.createJob = async function (req, res) {
       question4: req.body.question4,
     });
 
-    // 使用 sendMail 给用户发送邮件
+
     sendMail(
-        user.email, // 用户的邮箱地址
+        user.email,
         "Job Created Successfully",
         `Hi ${user.name},
         Your job "${job.name}" has been successfully created
