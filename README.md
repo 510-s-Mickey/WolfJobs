@@ -96,6 +96,8 @@ Eager to dive into a side hustle or seize a full-time job opportunity? Look no f
 
 At the heart of our bustling campus, WolfJobs stands out as the top student employment portal. Whether you're on the hunt for a short-term tech project, a part-time shift at a campus dining hall, or a full-time position that offers stability and growth, WolfJobs has a spot just for you.
 
+[Demo Video](https://youtu.be/_9WBt_3El-U)
+
 # Why WolfJobs?
 
 At WolfJobs, it’s not just about work – it's about joining a vibrant pack where every wolf (err, student!) counts. Step in and find your howl!🐺🎉
