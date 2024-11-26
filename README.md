@@ -70,7 +70,9 @@ https://github.com/H3nSte1n/coverage-badge-creator/blob/main/README.md >
 If you have ideas, questions, or comments, please let us know in the [discussions](https://github.com/510-s-Mickey/WolfJobs/discussions) tab!
 
 # What's New
-
+- Implemented Email Notification Service to notify managers and applicants via email about job postings and applications.
+- Added Video Upload functionality to allow applicants to upload video demonstrations for additional explanation.
+- Enhanced Advanced Password Settings by enabling a password visibility toggle and enforcing password strength requirements. [video](https://youtu.be/zXF9jQkcO3Y)
 - Updated previous GitHub Actions and implemented new GitHub Actions
     - They are documented and described [here](https://github.com/SE-Fall-2024/WolfJobs/blob/master/GitHubActions.md).
 - Containerization of Entire Application! This provides a seamless process to build the application.
