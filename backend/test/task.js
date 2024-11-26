@@ -7,7 +7,7 @@ const expect = chai.expect;
 chai.should();
 
 chai.use(chaiHttp);
-
+const { sendMail } = require("../../utils/email_service");
 describe("Backend API", () => {
   describe("GET /api/v1/users/fetchapplications", () => {
     it("Returns all applications (manager)", (done) => {
@@ -449,4 +449,196 @@ describe("Backend API", () => {
   //       });
   //   });
   // });
+});
+
+describe("Email Service", () => {
+    let sendMailStub;
+
+    beforeEach(() => {
+        // Stub nodemailer transporter
+        const transporter = nodemailer.createTransport();
+        sendMailStub = sinon.stub(transporter, "sendMail");
+    });
+
+    afterEach(() => {
+        sendMailStub.restore(); // Restore the stub after each test
+    });
+
+    it("should send an email successfully", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body");
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should fail to send an email with invalid recipient", async () => {
+        sendMailStub.rejects(new Error("Invalid email address"));
+
+        const result = await sendMail("invalid-email", "Test Subject", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should fail to send an email without subject", async () => {
+        sendMailStub.rejects(new Error("Missing subject"));
+
+        const result = await sendMail("test@example.com", "", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should fail to send an email without body", async () => {
+        sendMailStub.rejects(new Error("Missing email body"));
+
+        const result = await sendMail("test@example.com", "Test Subject", "");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should fail to send an email without recipient", async () => {
+        sendMailStub.rejects(new Error("Missing recipient"));
+
+        const result = await sendMail("", "Test Subject", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with special characters in the subject", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Subject with @#$%", "Test Body");
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with HTML body content", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail(
+            "test@example.com",
+            "Test Subject",
+            "<h1>Hello, this is a test email</h1>"
+        );
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should handle email service downtime gracefully", async () => {
+        sendMailStub.rejects(new Error("Service unavailable"));
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should log debug information when sending an email", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const consoleLogStub = sinon.stub(console, "log");
+        await sendMail("test@example.com", "Test Subject", "Test Body");
+
+        sinon.assert.calledWithMatch(consoleLogStub, "[DEBUG] Sending email with options:");
+        consoleLogStub.restore();
+    });
+
+    it("should handle authentication errors", async () => {
+        sendMailStub.rejects(new Error("Invalid authentication"));
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email to multiple recipients", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail(
+            "test1@example.com,test2@example.com",
+            "Test Subject",
+            "Test Body"
+        );
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with a long subject line", async () => {
+        const longSubject = "This is a very long subject line that exceeds typical length limits";
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", longSubject, "Test Body");
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with a long body", async () => {
+        const longBody = "This is a very long email body".repeat(100);
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", longBody);
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should not send an email if transporter throws an error", async () => {
+        sendMailStub.throws(new Error("Transporter error"));
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with unicode characters in the body", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", "Hello, 世界!");
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with emojis in the body", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", "Hello, 😊!");
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should handle invalid SMTP configuration", async () => {
+        sendMailStub.rejects(new Error("Invalid SMTP configuration"));
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body");
+        expect(result).to.be.false;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should handle sending email with CC", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body", {
+            cc: "cc@example.com",
+        });
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should handle sending email with BCC", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body", {
+            bcc: "bcc@example.com",
+        });
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
+
+    it("should send an email with attachments", async () => {
+        sendMailStub.resolves({ response: "Email sent successfully" });
+
+        const result = await sendMail("test@example.com", "Test Subject", "Test Body", {
+            attachments: [{ filename: "test.txt", content: "Hello, world!" }],
+        });
+        expect(result).to.be.true;
+        sinon.assert.calledOnce(sendMailStub);
+    });
 });
