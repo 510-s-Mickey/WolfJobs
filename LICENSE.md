@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Nick Case, Hannah Estes, Satwika Kancharla
+Copyright (c) 2024 Hui Sun, Zhichao Hou, Tingxiang Ji
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
